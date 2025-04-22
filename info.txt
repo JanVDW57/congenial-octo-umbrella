@@ -1,0 +1,4 @@
+Dokument aktualisieren im Terminal:
+git add .
+git commit -m "Update Website"  # oder was du geändert hast
+git push
