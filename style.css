@@ -1,1001 +1,1423 @@
 /* ==================================
    Globale Stile & Reset
    ================================== */
-   *,
-   *::before,
-   *::after {
-       box-sizing: border-box;
-       margin: 0;
-       padding: 0;
-   }
-   
-   html {
-       scroll-behavior: smooth; /* Für sanftes Scrollen bei internen Links */
-       scroll-padding-top: 80px; /* Platz für den sticky Header (Höhe ggf. anpassen) */
-   }
-   
-   body {
-       font-family: 'Inter', sans-serif;
-       line-height: 1.6;
-       color: #333;
-       background-color: #fff; /* Standard heller Hintergrund */
-       font-size: 16px; /* Basis-Schriftgröße */
-   }
-   
-   img {
-       max-width: 100%;
-       height: auto;
-       display: block; /* Verhindert Leerraum unter Bildern */
-   }
-   
-   a {
-       text-decoration: none;
-       color: #007bff; /* Beispiel-Linkfarbe */
-   }
-   
-   a:hover {
-       text-decoration: underline;
-   }
-   
-   ul {
-       list-style: none;
-   }
-   
-   h1, h2, h3 {
-       line-height: 1.2;
-       margin-bottom: 1rem; /* Abstand unter Überschriften */
-       font-weight: 700; /* Fett für Überschriften */
-   }
-   
-   h1 { font-size: 2.5rem; }
-   h2 { font-size: 2rem; }
-   h3 { font-size: 1.5rem; }
-   
-   /* ==================================
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Für sanftes Scrollen bei internen Links */
+    scroll-padding-top: 80px;
+    /* Platz für den sticky Header (Höhe ggf. anpassen) */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    /* Standard heller Hintergrund */
+    font-size: 16px;
+    /* Basis-Schriftgröße */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* Verhindert Leerraum unter Bildern */
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    /* Beispiel-Linkfarbe */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    /* Abstand unter Überschriften */
+    font-weight: 700;
+    /* Fett für Überschriften */
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+/* ==================================
       Layout Helfer
       ================================== */
-   .container {
-       max-width: 1140px; /* Maximale Breite */
-       margin-left: auto;
-       margin-right: auto;
-       padding-left: 15px;
-       padding-right: 15px;
-   }
-   
-   /* ==================================
+.container {
+    max-width: 1140px;
+    /* Maximale Breite */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Icon Helfer */
+.icon-inline {
+    /* Für SVGs oder Icons im Text */
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+    /* Bessere Ausrichtung */
+    margin-right: 0.3em;
+    /* Kleiner Abstand nach rechts */
+}
+
+
+/* ==================================
       Header
       ================================== */
-   .main-header {
-       background-color: #fff;
-       padding: 1rem 0;
-       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-       z-index: 1000; /* Stellt sicher, dass der Header oben ist */
-   }
-   
-   .main-header.sticky {
-       position: sticky;
-       top: 0;
-   }
-   
-   .header-container {
-       display: flex;
-       justify-content: space-between;
-       align-items: center;
-   }
-   
-   .logo-container .logo-img {
-       height: 40px; /* Feste Höhe für das Logo */
-       width: auto;
-   }
-   
-   .main-nav .nav-list {
-       display: flex;
-       gap: 1.5rem; /* Abstand zwischen Menüpunkten */
-   }
-   
-   .main-nav .nav-link {
-       color: #333;
-       font-weight: 700;
-       padding: 0.5rem 0; /* Etwas Padding für Klickfläche */
-   }
-   
-   .main-nav .nav-link:hover {
-       color: #0056b3;
-       text-decoration: none;
-   }
-   
-   .header-right-container {
-       display: flex;
-       align-items: center;
-       gap: 1rem;
-   }
-   
-   /* ==================================
+.main-header {
+    background-color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    /* Stellt sicher, dass der Header oben ist */
+}
+
+.main-header.sticky {
+    position: sticky;
+    top: 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container .logo-img {
+    height: 40px;
+    /* Feste Höhe für das Logo */
+    width: auto;
+}
+
+.main-nav .nav-list {
+    display: flex;
+    gap: 1.5rem;
+    /* Abstand zwischen Menüpunkten */
+}
+
+.main-nav .nav-link {
+    color: #333;
+    font-weight: 700;
+    padding: 0.5rem 0;
+    /* Etwas Padding für Klickfläche */
+}
+
+.main-nav .nav-link:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.header-right-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* ==================================
       Call-To-Action Button
       ================================== */
-   .cta-button {
-       display: inline-block;
-       background-color: #007bff;
-       color: #fff;
-       padding: 0.8rem 1.5rem;
-       border-radius: 5px;
-       font-weight: 700;
-       text-align: center;
-       border: none;
-       cursor: pointer;
-       transition: background-color 0.2s ease; /* Leichte Hover-Transition */
-   }
-   
-   .cta-button:hover {
-       background-color: #0056b3;
-       color: #fff;
-       text-decoration: none;
-   }
-   
-   .large-cta {
-       padding: 1rem 2rem;
-       font-size: 1.1rem;
-   }
-   
-   /* ==================================
+.cta-button {
+    display: inline-block;
+    background-color: #007bff;
+    /* Standard Blau */
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 700;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    /* Leichte Hover-Transition */
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+    /* Dunkleres Blau */
+    color: #fff;
+    text-decoration: none;
+}
+
+.large-cta {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* Spezieller Stil für hervorgehobene CTAs (z.B. Hero) - Checkliste #1.3 */
+.cta-button.cta-prominent {
+    background-color: #28a745;
+    /* Grün (Erfolgsfarbe) */
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.cta-button.cta-prominent:hover {
+    background-color: #218838;
+    /* Dunkleres Grün für Hover */
+}
+
+
+/* ==================================
       Mobile Navigation Toggle
       ================================== */
-   .mobile-nav-toggle {
-       display: none; /* Standardmäßig versteckt auf Desktop */
-       background: none;
-       border: none;
-       cursor: pointer;
-       padding: 0.5rem;
-       z-index: 1001; /* Über der Navigation */
-   }
-   
-   .hamburger-icon .line {
-       display: block;
-       width: 25px;
-       height: 3px;
-       background-color: #333;
-       margin: 5px 0;
-       transition: transform 0.3s ease, opacity 0.3s ease; /* Für X-Transformation */
-   }
-   
-   .close-icon {
-       display: none; /* Initial versteckt */
-       font-size: 2rem;
-       font-weight: bold;
-       color: #333;
-       line-height: 1;
-   }
-   
-   /* Zustand wenn Mobile-Menü offen ist */
-   body.nav-open .main-nav {
-       display: block; /* Zeige die Navigation */
-   }
-   
-   body.nav-open .mobile-nav-toggle .hamburger-icon {
-       display: none;
-   }
-   
-   body.nav-open .mobile-nav-toggle .close-icon {
-       display: block;
-   }
-   
-   /* Alternative: Hamburger zu X animieren (auskommentiert) */
-   /*
-   body.nav-open .mobile-nav-toggle .line-1 { transform: translateY(8px) rotate(45deg); }
-   body.nav-open .mobile-nav-toggle .line-2 { opacity: 0; }
-   body.nav-open .mobile-nav-toggle .line-3 { transform: translateY(-8px) rotate(-45deg); }
-   body.nav-open .mobile-nav-toggle .close-icon { display: none; }
-   */
-   
-   /* ==================================
+.mobile-nav-toggle {
+    display: none;
+    /* Standardmäßig versteckt auf Desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+    /* Über der Navigation */
+}
+
+.hamburger-icon .line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    /* Für X-Transformation */
+}
+
+.close-icon {
+    display: none;
+    /* Initial versteckt */
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    line-height: 1;
+}
+
+/* Zustand wenn Mobile-Menü offen ist */
+body.nav-open .main-nav {
+    display: block;
+    /* Zeige die Navigation */
+}
+
+body.nav-open .mobile-nav-toggle .hamburger-icon {
+    display: none;
+}
+
+body.nav-open .mobile-nav-toggle .close-icon {
+    display: block;
+}
+
+/* ==================================
       Allgemeine Sektionen
       ================================== */
-   .content-section {
-       padding: 4rem 0; /* Vertikaler Abstand */
-   }
-   
-   .content-section h2 {
-       text-align: center;
-       margin-bottom: 2.5rem; /* Mehr Abstand unter Sektionsüberschriften */
-   }
-   
-   .bg-light {
-       background-color: #f8f9fa; /* Heller Hintergrund für Abwechslung */
-   }
-   
-   .section-intro {
-       text-align: center;
-       max-width: 700px;
-       margin-left: auto;
-       margin-right: auto;
-       margin-bottom: 3rem;
-       color: #555;
-   }
-   
-   .content-image { /* Für Bilder innerhalb von Sektionen */
-       display: block; /* Wichtig für margin: auto */
-       margin: 2rem auto; /* Zentrieren mit Abstand */
-       max-width: 600px; /* Maximale Breite begrenzen */
-       height: auto; /* Höhe automatisch anpassen */
-   }
-   
-   /* ==================================
+.content-section {
+    padding: 4rem 0;
+    /* Vertikaler Abstand */
+}
+
+.content-section h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    /* Mehr Abstand unter Sektionsüberschriften */
+}
+
+.bg-light {
+    background-color: #f8f9fa;
+    /* Heller Hintergrund für Abwechslung */
+}
+
+.section-intro {
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    color: #555;
+}
+
+.content-image {
+    /* Für Bilder innerhalb von Sektionen */
+    display: block;
+    /* Wichtig für margin: auto */
+    margin: 2rem auto;
+    /* Zentrieren mit Abstand */
+    max-width: 600px;
+    /* Maximale Breite begrenzen */
+    height: auto;
+    /* Höhe automatisch anpassen */
+}
+
+/* ==================================
       Hero Section
       ================================== */
-   .new-hero-section {
-       padding: 5rem 0;
-       background-color: #eef2f7; /* Leicht anderer Hintergrund */
-   }
-   
-   .hero-grid {
-       display: grid;
-       grid-template-columns: 1fr 1fr; /* Zwei Spalten */
-       gap: 3rem;
-       align-items: center;
-   }
-   
-   .hero-headline {
-       font-size: 2.8rem; /* Größere Headline */
-       margin-bottom: 1.5rem;
-   }
-   
-   .highlight-mark { /* Für "schneller", "einfacher" */
-       color: #007bff;
-   }
-   
-   .highlight-bg { /* Für "7 Tagen", "praxiserprobt" */
-       background-color: #d1e7ff; /* Heller blauer Hintergrund */
-       padding: 0.1em 0.4em;
-       border-radius: 3px;
-   }
-   
-   .hero-subtitle {
-       font-size: 1.2rem;
-       margin-bottom: 1rem;
-       color: #555;
-   }
-   
-   .hero-subline {
-       margin-bottom: 1.5rem;
-       color: #666;
-   }
-   
-   .hero-benefits {
-       margin-bottom: 2rem;
-   }
-   
-   .hero-benefits li {
-       margin-bottom: 0.5rem;
-       color: #444;
-       /* Optional: Haken davor für Konsistenz */
-       padding-left: 1.5em;
-       position: relative;
-   }
-   /* Optional: Haken davor */
-   .hero-benefits li::before {
-       content: '✓';
-       color: #007bff; /* Blauer Haken passend zur Marke */
-       position: absolute;
-       left: 0;
-       top: 0.1em; /* Feinjustierung vertikal */
-       font-weight: bold;
-   }
-   
-   .hero-image {
-       max-width: 100%; /* Passt sich der Spalte an */
-       border-radius: 8px; /* Leichte Abrundung */
-   }
-   
-   .hero-trust-logos {
-       text-align: center;
-       margin-top: 3rem;
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       gap: 1.5rem;
-       flex-wrap: wrap; /* Umbruch bei Bedarf */
-       color: #666;
-       /* display: none; ist im HTML, hier nicht nötig */
-   }
-   
-   .hero-trust-logos img {
-       height: 35px;
-       width: auto;
-       opacity: 0.7;
-   }
-   
-   /* ==================================
+.new-hero-section {
+    padding: 5rem 0;
+    background-color: #eef2f7;
+    /* Leicht anderer Hintergrund */
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Zwei Spalten */
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero-headline {
+    font-size: 2.8rem;
+    /* Größere Headline */
+    margin-bottom: 1.5rem;
+}
+
+.highlight-mark {
+    /* Für "schneller", "einfacher" */
+    color: #007bff;
+}
+
+.highlight-bg {
+    /* Für "praxiserprobt" */
+    background-color: #d1e7ff;
+    /* Heller blauer Hintergrund */
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.hero-subline {
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+.hero-benefits {
+    margin-bottom: 2rem;
+}
+
+.hero-benefits li::before {
+    content: '✓';
+    color: #007bff;
+    /* Blauer Haken */
+    font-weight: bold;
+    /* Entferne absolute Positionierung */
+    /* position: absolute; */
+    /* left: 0; */
+    /* top: 0.1em; */
+    margin-right: 0.25rem;
+    /* Als Flex-Item braucht es keine explizite Positionierung mehr */
+    flex-shrink: 0;
+    /* Verhindert, dass der Haken schrumpft */
+}
+
+.hero-image {
+    max-width: 100%;
+    /* Passt sich der Spalte an */
+    border-radius: 8px;
+    /* Leichte Abrundung */
+}
+
+/* Trust Logos im Hero - Checkliste #1.4 */
+.hero-trust-logos {
+    text-align: center;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    /* Umbruch bei Bedarf */
+}
+
+.hero-trust-logos span {
+    margin-right: 1rem;
+    /* Abstand zwischen Text und Logos */
+    font-weight: bold;
+    color: #555;
+}
+
+.hero-trust-logos img {
+    height: 35px;
+    width: auto;
+    opacity: 0.7;
+    filter: grayscale(50%);
+    /* Optional: Logos etwas dezenter machen */
+}
+
+.hero-undertitle {
+    font-size: 1rem;
+    color: #555;
+    margin-top: -0.5rem;
+    /* Näher an Subtitle rücken */
+    margin-bottom: 1.5rem;
+    display: none;
+}
+
+.hero-trust-text {
+    margin-top: 1rem;
+    /* Abstand zum Button */
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.hero-trust-text span {
+    /* Falls mehrere Elemente drin sind */
+    margin-right: 1rem;
+    display: inline-block;
+    /* Sorgt für korrekten Abstand */
+}
+
+.hero-trust-text span svg {
+    /* Styling für eventuelle Icons wie Sterne */
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    margin-right: 0.2em;
+    fill: #ffc107;
+    /* Gold für Sterne */
+}
+
+.video-wrapper {
+    margin-top: 2rem;
+    /* Beispiel Abstand */
+    /* Weitere Stile hier */
+}
+
+/* ==================================
       Problem Section
       ================================== */
-   .problem-intro {
-       text-align: center;
-       max-width: 600px;
-       margin: 0 auto 2.5rem auto;
-       color: #555;
-   }
-   
-   .marker-underline { /* Für "Umsatz" etc. in h2 */
-       text-decoration: underline;
-       text-decoration-color: #007bff; /* Hauptfarbe Blau */
-       text-decoration-thickness: 3px;
-       text-underline-offset: 4px; /* Etwas Abstand */
-   }
-   
-   .problem-transition {
-       text-align: center;
-       margin-top: 3rem;
-       font-weight: 700;
-       color: #007bff;
-   }
-   
-   /* ==================================
+.problem-intro {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+    color: #555;
+}
+
+.marker-underline {
+    /* Für "Umsatz" etc. in h2 */
+    /* text-decoration: underline; */
+    /* Alternative: Border */
+    /* text-decoration-color: #007bff; */
+    /* text-decoration-thickness: 3px; */
+    /* text-underline-offset: 4px; */
+    /* Alternative mit Border: */
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 2px;
+    /* Kleiner Abstand zum Text */
+    display: inline;
+    /* Wichtig, damit border nur unter dem Wort ist */
+}
+
+.problem-transition {
+    text-align: center;
+    margin-top: 3rem;
+    font-weight: 700;
+    color: #007bff;
+}
+
+/* ==================================
       Solution Section
       ================================== */
-   .solution-intro {
-       text-align: center;
-       max-width: 600px;
-       margin: 0 auto 2.5rem auto;
-       color: #555;
-   }
-   
-   /* ==================================
+.solution-intro {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+    color: #555;
+}
+
+/* ==================================
       Features Grid (Problem & Benefits Sections)
       ================================== */
-   .features-grid {
-       display: grid;
-       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive Grid */
-       gap: 2rem;
-   }
-   
-   .feature-item {
-       text-align: center;
-       padding: 1.5rem;
-       background-color: #fff;
-       border-radius: 8px;
-       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-   }
-   
-   .feature-item .icon {
-       max-width: 50px;
-       margin-bottom: 1rem;
-   }
-   
-   .feature-item h3 {
-       font-size: 1.2rem;
-       margin-bottom: 0.5rem;
-   }
-   
-   .feature-item p {
-       color: #555;
-       font-size: 0.95rem;
-       flex-grow: 1; /* Sorgt dafür, dass die Boxen bei wenig Text nicht schrumpfen */
-   }
-   
-   /* ==================================
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Responsive Grid */
+    gap: 2rem;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feature-item .icon {
+    max-width: 50px;
+    margin-bottom: 1rem;
+}
+
+.feature-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+    color: #555;
+    font-size: 0.95rem;
+    flex-grow: 1;
+    /* Sorgt dafür, dass die Boxen bei wenig Text nicht schrumpfen */
+}
+
+/* Styling für Hervorhebung in Feature-Text (Beispiel) */
+.feature-item p em {
+    display: block;
+    /* Eigene Zeile für den "Warum wichtig"-Teil */
+    margin-top: 0.5rem;
+    font-style: normal;
+    font-size: 0.9em;
+    color: #0056b3;
+    /* Dunkleres Blau */
+}
+
+/* ==================================
       Process Section
       ================================== */
-   .process-layout-grid {
-       display: grid;
-       grid-template-columns: 1.5fr 1fr; /* Mehr Platz für Schritte */
-       gap: 3rem;
-       align-items: flex-start; /* Schritte oben ausrichten */
-   }
-   
-   .process-step-item {
-       display: flex;
-       gap: 1.5rem;
-       margin-bottom: 2rem;
-       align-items: flex-start; /* Icon und Text oben ausrichten */
-   }
-   
-   .process-steps-column .process-step-item:last-child {
-       margin-bottom: 0; /* Letztes Element keinen Abstand nach unten */
-   }
-   
-   .process-step-icon-wrapper {
-       flex-shrink: 0;
-       display: inline-flex;
-       align-items: center;
-   }
-   
-   .process-icon {
-       max-width: 40px;
-       display: block;
-       height: auto;
-   }
-   
-   .process-step-content h3 {
-       font-size: 1.2rem;
-       margin-bottom: 0.3rem;
-   }
-   
-   .process-step-content p {
-       color: #555;
-   }
-   
-   .process-side-image {
-       border-radius: 8px;
-       margin-top: 1rem; /* Etwas Abstand nach oben */
-       width: 100%;
-   }
-   
-   /* ==================================
+.process-layout-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    /* Mehr Platz für Schritte */
+    gap: 3rem;
+    align-items: flex-start;
+    /* Schritte oben ausrichten */
+}
+
+/* Nummerierung für Prozess-Schritte - Checkliste #4.1 */
+.process-steps-column {
+    counter-reset: process-step;
+    /* Zähler initialisieren */
+}
+
+.process-step-number {
+    counter-increment: process-step;
+    /* Zähler erhöhen */
+    content: counter(process-step);
+    /* Zähler anzeigen */
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #007bff;
+    /* Hauptfarbe Blau */
+    min-width: 1.5em;
+    /* Feste Breite für Ausrichtung */
+    text-align: right;
+    /* Nummer rechtsbündig im Wrapper */
+    margin-right: 0.5rem;
+    /* Abstand zum Icon */
+    line-height: 1;
+    /* Verhindert zu großen Zeilenabstand */
+    display: inline-block;
+}
+
+.process-step-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+    /* Icon und Text oben ausrichten */
+}
+
+.process-steps-column .process-step-item:last-child {
+    margin-bottom: 0;
+    /* Letztes Element keinen Abstand nach unten */
+}
+
+.process-step-icon-wrapper {
+    flex-shrink: 0;
+    display: flex;
+    /* Geändert für Nummerierung */
+    align-items: center;
+}
+
+.process-icon {
+    max-width: 40px;
+    display: block;
+    height: auto;
+}
+
+.process-step-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.process-step-content p {
+    color: #555;
+}
+
+/* Styling für Hervorhebungen im Prozess - Checkliste #4.2 */
+.process-step-content p strong {
+    color: #333;
+    /* Etwas dunkler für Hervorhebung */
+}
+
+
+.process-side-image {
+    border-radius: 8px;
+    margin-top: 1rem;
+    /* Etwas Abstand nach oben */
+    width: 100%;
+}
+
+/* ==================================
       Case Study Section (Überarbeitet)
       ================================== */
-   #casestudy {
-       /* Nutzt Standard-Padding von .content-section */
-       background-color: #fff; /* Sicherstellen, dass es nicht bg-light erbt */
-   }
-   
-   #casestudy h2 {
-        margin-bottom: 3rem; /* Etwas mehr Abstand zur Grid */
-   }
-   
-   .case-study-grid {
-       display: grid;
-       grid-template-columns: 1fr 1fr;
-       gap: 2.5rem;
-   }
-   
-   /* Styling für die einzelnen Karten (Vorher/Nachher) */
-   .case-study-before,
-   .case-study-after {
-       padding: 2rem;
-       border-radius: 8px;
-       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
-   }
-   
-   /* Spezifisches Styling für die "Vorher"-Karte */
-   .case-study-before {
-       background-color: #fff7f7; /* Heller Rotton */
-       border: 1px solid #f8d7da; /* Roter Rand */
-   }
-   
-   .case-study-before h3 {
-       margin-bottom: 1.5rem;
-       color: #b71c1c; /* Dunkles Rot */
-       border-bottom: 2px solid #f5c6cb; /* Rote Unterstreichung */
-       padding-bottom: 0.5rem;
-       font-size: 1.4rem;
-   }
-   
-   /* Spezifisches Styling für die "Nachher"-Karte */
-   .case-study-after {
-       background-color: #f0fff4; /* Heller Grünton */
-       border: 1px solid #c3e6cb; /* Grüner Rand */
-   }
-   
-   .case-study-after h3 {
-       margin-bottom: 1.5rem;
-       color: #155724; /* Dunkles Grün */
-       border-bottom: 2px solid #b1dfbb; /* Grüne Unterstreichung */
-       padding-bottom: 0.5rem;
-       font-size: 1.4rem;
-   }
-   
-   /* Styling für die Listen in Case Study */
-   .case-study-grid ul {
-       list-style: none;
-       padding-left: 0;
-   }
-   
-   .case-study-grid li {
-       margin-bottom: 0.8rem;
-       padding-left: 1.8em; /* Platz für Icon */
-       position: relative;
-       line-height: 1.5;
-       color: #444;
-   }
-   
-   /* Icons für die Listenelemente in Case Study */
-   .case-study-grid li::before {
-       content: '';
-       position: absolute;
-       left: 0;
-       top: 0.25em; /* Vertikale Ausrichtung */
-       font-family: 'Arial', sans-serif; /* Fallback */
-       font-weight: bold;
-       font-size: 1.1em;
-       width: 1.2em;
-       text-align: center;
-   }
-   
-   .case-study-before li::before {
-       content: '✕'; /* Rotes Kreuz */
-       color: #dc3545;
-   }
-   
-   .case-study-after li::before {
-       content: '✓'; /* Grüner Haken */
-       color: #28a745;
-   }
-   
-   /* Hervorhebung des Ergebnisses in Case Study */
-   .case-study-after li.result {
-       margin-top: 1.5rem;
-       padding: 0.8rem 1rem 0.8rem 2.8em; /* Mehr Padding, Platz für Icon */
-       background-color: #e1f3e8; /* Grüner Hintergrund */
-       border-radius: 5px;
-       border-left: 4px solid #28a745; /* Grüner Akzent links */
-       position: relative;
-   }
-   
-   .case-study-after li.result::before {
-       content: '✓'; /* Haken wiederholen */
-       color: #28a745;
-       left: 0.8em; /* Angepasste Position */
-       top: 0.7em; /* Angepasste Position */
-   }
-   
-   .case-study-after li.result strong {
-       color: #155724; /* Dunkelgrüner Text */
-       font-size: 1.1rem;
-       display: block; /* Stellt sicher, dass es unter dem Icon beginnt */
-   }
-   
-   /* ==================================
+#casestudy {
+    background-color: #fff;
+    /* Sicherstellen, dass es nicht bg-light erbt */
+}
+
+#casestudy h2 {
+    margin-bottom: 3rem;
+}
+
+.case-study-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+}
+
+.case-study-before,
+.case-study-after {
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+.case-study-before {
+    background-color: #fff7f7;
+    border: 1px solid #f8d7da;
+}
+
+.case-study-before h3 {
+    margin-bottom: 1.5rem;
+    color: #b71c1c;
+    border-bottom: 2px solid #f5c6cb;
+    padding-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.case-study-after {
+    background-color: #f0fff4;
+    border: 1px solid #c3e6cb;
+}
+
+.case-study-after h3 {
+    margin-bottom: 1.5rem;
+    color: #155724;
+    border-bottom: 2px solid #b1dfbb;
+    padding-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.case-study-grid ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.case-study-grid li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.8em;
+    position: relative;
+    line-height: 1.5;
+    color: #444;
+}
+
+.case-study-grid li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0em;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+    width: 1.2em;
+    text-align: center;
+}
+
+.case-study-before li::before {
+    content: '✕';
+    color: #dc3545;
+}
+
+.case-study-after li::before {
+    content: '✓';
+    color: #28a745;
+}
+
+.case-study-after li.result {
+    margin-top: 1.5rem;
+    padding: 0.8rem 1rem 0.8rem 2.8em;
+    background-color: #e1f3e8;
+    border-radius: 5px;
+    border-left: 4px solid #28a745;
+    position: relative;
+}
+
+.case-study-after li.result::before {
+    content: '🚀';
+    color: initial;
+    left: 0.6em;
+    font-size: 1.3em;
+    top: 0.5em;
+}
+
+.case-study-after li.result strong {
+    color: #155724;
+    font-size: 1.1rem;
+    display: block;
+}
+
+/* ==================================
+   CEO Video Placeholder Section
+   ================================== */
+
+#ceo-video h2 {
+    /* Nutzt Standard h2 Styling, text-align ist im HTML gesetzt */
+}
+
+.video-placeholder-wrapper {
+    max-width: 800px;
+    /* Maximale Breite des Videos */
+    margin: 2rem auto 0 auto;
+    /* Zentriert mit Abstand nach oben */
+    background-color: #e9ecef;
+    /* Heller grauer Hintergrund */
+    border: 1px solid #dee2e6;
+    /* Dezenter Rand */
+    border-radius: 8px;
+    /* Abgerundete Ecken */
+    aspect-ratio: 16 / 9;
+    /* Sorgt für 16:9 Video-Format */
+    position: relative;
+    /* Für absolute Positionierung des Inhalts */
+    overflow: hidden;
+    /* Verhindert Überlaufen */
+    cursor: pointer;
+    /* Zeigt an, dass es klickbar ist */
+}
+
+.video-placeholder-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* Icon und Text untereinander */
+    justify-content: center;
+    align-items: center;
+    color: #495057;
+    /* Dunkelgraue Farbe für Text/Icon */
+    transition: background-color 0.3s ease;
+    /* Sanfter Hover-Effekt */
+}
+
+.video-placeholder-wrapper:hover .video-placeholder-content {
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Leichter Overlay bei Hover */
+}
+
+.play-button-svg {
+    width: 60px;
+    /* Größe des Play-Buttons */
+    height: 60px;
+    margin-bottom: 0.5rem;
+    /* Abstand zum Text */
+    color: #007bff;
+    /* Blaue Farbe für Play-Button */
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.video-placeholder-wrapper:hover .play-button-svg {
+    opacity: 1;
+    transform: scale(1.1);
+    /* Leichte Vergrößerung bei Hover */
+}
+
+.video-placeholder-content span {
+    font-weight: bold;
+}
+
+/* ==================================
       Testimonial Section
       ================================== */
-   .testimonial-content {
-       max-width: 700px;
-       margin: 0 auto; /* Zentrieren */
-       text-align: center;
-   }
-   
-   .testimonial-image {
-       width: 100px;
-       height: 100px;
-       border-radius: 50%;
-       margin: 0 auto 1.5rem auto;
-       object-fit: cover;
-   }
-   
-   .testimonial-content blockquote {
-       font-size: 1.2rem;
-       font-style: italic;
-       color: #555;
-       margin-bottom: 1rem;
-       border-left: 4px solid #007bff; /* Akzentlinie links */
-       padding-left: 1rem;
-       text-align: left;
-   }
-   
-   .testimonial-content cite {
-       font-style: normal;
-       font-weight: 700;
-       color: #333;
-       display: block;
-       text-align: center; /* Quelle zentriert */
-   }
-   
-   .testimonial-content cite strong {
-       display: block; /* Name in eigene Zeile */
-   }
-   
-   /* ==================================
+.testimonial-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.testimonial-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem auto;
+    object-fit: cover;
+}
+
+.testimonial-content blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 1rem;
+    border-left: 4px solid #007bff;
+    padding-left: 1rem;
+    text-align: left;
+}
+
+/* Highlight für Testimonial - Checkliste #6.1 */
+.testimonial-highlight {
+    font-weight: bold;
+    font-style: normal;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+
+.testimonial-content cite {
+    font-style: normal;
+    font-weight: 700;
+    color: #333;
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.testimonial-content cite strong {
+    display: block;
+}
+
+/* ==================================
       Offer / Pricing Section
       ================================== */
-   .offer-section {
-       background-color: #eef2f7;
-   }
-   
-   .simple-pricing-grid {
-       display: grid;
-       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-       gap: 2rem;
-       align-items: stretch; /* Gleiche Höhe */
-   }
-   
-   .pricing-card {
-       background-color: #fff;
-       border: 1px solid #ddd;
-       border-radius: 8px;
-       padding: 2rem;
-       display: flex;
-       flex-direction: column;
-       text-align: center;
-       position: relative; /* Für Badge */
-       box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-   }
-   
-   .pricing-card.highlighted {
-       border-color: #007bff;
-       border-width: 2px;
-       box-shadow: 0 6px 20px rgba(0, 123, 255, 0.2);
-   }
-   
-   .pricing-card .badge {
-       position: absolute;
-       top: -15px;
-       left: 50%;
-       transform: translateX(-50%);
-       background-color: #007bff;
-       color: #fff;
-       padding: 0.3rem 0.8rem;
-       border-radius: 15px;
-       font-size: 0.8rem;
-       font-weight: 700;
-   }
-   
-   .pricing-card h3 {
-       font-size: 1.6rem;
-       margin-bottom: 0.5rem;
-   }
-   
-   .package-description {
-       color: #555;
-       margin-bottom: 1.5rem;
-       min-height: 40px; /* Höhe anpassen, falls nötig */
-       flex-grow: 0;
-   }
-   
-   .price {
-       margin-bottom: 1.5rem;
-   }
-   
-   .price strong {
-       font-size: 2.5rem;
-       font-weight: 700;
-       display: block;
-   }
-   
-   .vat-notice,
-   .price small {
-       font-size: 0.9rem;
-       color: #666;
-   }
-   
-   .features-list {
-       text-align: left;
-       margin-bottom: 2rem;
-       flex-grow: 1; /* Füllt Platz bis zum Button */
-   }
-   
-   .features-list li {
-       margin-bottom: 0.7rem;
-       padding-left: 1.5rem; /* Platz für Icon */
-       position: relative;
-   }
-   
-   .features-list li::before {
-       content: '✓'; /* Standard: Grüner Haken */
-       color: #28a745;
-       position: absolute;
-       left: 0;
-       top: 0.1em; /* Vertikale Ausrichtung */
-       font-weight: bold;
-   }
-   
-   .features-list li.unavailable {
-       color: #aaa;
-       text-decoration: line-through;
-   }
-   
-   .features-list li.unavailable::before {
-       content: '✕'; /* Rotes Kreuz für nicht verfügbar */
-       color: #dc3545;
-   }
-   
-   .features-list li strong {
-       font-weight: 700;
-   }
-   
-   .pricing-card .cta-button {
-       margin-top: auto; /* Button nach unten */
-   }
-   
-   .guarantee {
-       background-color: #e7f3ff; /* Heller Blauton */
-       padding: 0.8rem;
-       border-radius: 5px;
-       margin: 1rem 0 1.5rem 0;
-       font-size: 0.9rem;
-   }
-   
-   .guarantee strong {
-       color: #0056b3; /* Dunkleres Blau */
-   }
-   
-   .availability-notice {
-       font-size: 0.9rem;
-       color: #dc3545; /* Rot */
-       margin-top: 0.5rem;
-       font-weight: bold;
-   }
-   
-   /* ==================================
+.offer-section {
+    background-color: #eef2f7;
+}
+
+.simple-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.pricing-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.pricing-card.highlighted {
+    border-color: #007bff;
+    border-width: 2px;
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.2);
+}
+
+.pricing-card .badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.pricing-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.package-description {
+    color: #555;
+    margin-bottom: 1.5rem;
+    min-height: 40px;
+    flex-grow: 0;
+}
+
+.price {
+    margin-bottom: 1.5rem;
+}
+
+.price strong {
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: block;
+}
+
+.vat-notice,
+.price small {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.features-list {
+    text-align: left;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.features-list li {
+    margin-bottom: 0.7rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.features-list li::before {
+    content: '✓';
+    color: #28a745;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: bold;
+}
+
+.features-list li.unavailable {
+    color: #aaa;
+    text-decoration: line-through;
+}
+
+.features-list li.unavailable::before {
+    content: '✕';
+    color: #dc3545;
+}
+
+/* NEUE Regel: Überschreibt das Icon NUR für Bonus-Features */
+.features-list li.bonus-feature::before {
+    content: '★';
+    /* Ändert den Inhalt zum Stern */
+    color: #ffc107;
+    /* Setzt die Farbe auf Goldgelb */
+    /* Optional: Weitere Anpassungen für den Stern, falls nötig */
+    /* top: 0.05em; */
+    /* Evtl. vertikale Position leicht anpassen */
+    /* font-size: 1.1em; */
+    /* Evtl. Größe leicht anpassen */
+}
+
+
+.features-list li strong {
+    font-weight: 700;
+}
+
+/* Styling für Bonus-Features - Checkliste #7.4 */
+.features-list li.bonus-feature strong {
+    /* Bereits fett, evtl. Farbe anpassen? */
+    /* color: #0056b3; */
+}
+
+
+.pricing-card .cta-button {
+    margin-top: auto;
+}
+
+.guarantee {
+    background-color: #e7f3ff;
+    padding: 0.8rem;
+    border-radius: 5px;
+    margin: 1rem 0 1.5rem 0;
+    font-size: 0.9rem;
+}
+
+.guarantee strong {
+    color: #0056b3;
+}
+
+.availability-notice {
+    font-size: 0.9rem;
+    color: #dc3545;
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+/* ==================================
       FAQ Section
       ================================== */
-   #faq {
-       /* Nutzt Stile von .content-section und .bg-light */
-   }
-   
-   .faq-container {
-       max-width: 800px;
-       margin: 0 auto; /* Zentriert */
-   }
-   
-   .faq-item {
-       background-color: #fff;
-       border: 1px solid #e0e0e0;
-       border-radius: 5px;
-       margin-bottom: 1rem;
-       transition: margin-bottom 0.3s ease;
-   }
-   
-   .faq-item[open] {
-       margin-bottom: 1.5rem; /* Mehr Abstand wenn offen */
-   }
-   
-   .faq-question {
-       padding: 1rem 1.5rem;
-       font-weight: 700;
-       cursor: pointer;
-       position: relative;
-       list-style: none; /* Standard-Marker ausblenden */
-       display: flex;
-       justify-content: space-between;
-       align-items: center;
-       color: #333;
-   }
-   
-   /* Standard-Marker ausblenden (alle Browser) */
-   .faq-question::-webkit-details-marker { display: none; }
-   .faq-question::marker { display: none; }
-   @supports not selector(::marker) {
-       .faq-question { list-style-type: none; }
-   }
-   
-   .faq-question:hover {
-       background-color: #f8f9fa; /* Hover-Effekt */
-   }
-   
-   /* FAQ Icon (+/-) */
-   .faq-icon {
-       display: inline-block;
-       width: 1em;
-       height: 1em;
-       margin-left: 1rem;
-       position: relative;
-       flex-shrink: 0;
-       transition: transform 0.3s ease;
-   }
-   
-   .faq-icon::before,
-   .faq-icon::after {
-       content: '';
-       position: absolute;
-       background-color: #007bff; /* Hauptfarbe Blau */
-       height: 2px;
-       width: 100%;
-       top: 50%;
-       left: 0;
-       transform: translateY(-50%);
-       transition: transform 0.3s ease;
-   }
-   
-   .faq-icon::after {
-       transform: translateY(-50%) rotate(90deg); /* Vertikale Linie */
-   }
-   
-   .faq-item[open] > .faq-question .faq-icon::after {
-       transform: translateY(-50%) rotate(0deg); /* Wird horizontal -> Minus */
-   }
-   
-   .faq-answer {
-       padding: 1rem 1.5rem 1.5rem 1.5rem; /* Deine Anpassung (oben 1rem) */
-       color: #555;
-       line-height: 1.7;
-       border-top: 1px solid #e0e0e0; /* Trennlinie */
-       margin-top: 0rem; /* Deine Anpassung */
-   }
-   
-   .faq-answer p:last-child {
-       margin-bottom: 0;
-   }
-   
-   /* ==================================
+#faq {
+    /* Nutzt Stile von .content-section und .bg-light */
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    transition: margin-bottom 0.3s ease;
+}
+
+.faq-item[open] {
+    margin-bottom: 1.5rem;
+}
+
+.faq-question {
+    padding: 1rem 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+}
+
+/* Standard-Marker ausblenden */
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-question::marker {
+    display: none;
+}
+
+@supports not selector(::marker) {
+    .faq-question {
+        list-style-type: none;
+    }
+}
+
+.faq-question:hover {
+    background-color: #f8f9fa;
+}
+
+/* FAQ Icon (+/-) */
+.faq-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-left: 1rem;
+    position: relative;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.faq-icon::before,
+.faq-icon::after {
+    content: '';
+    position: absolute;
+    background-color: #007bff;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.faq-icon::after {
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.faq-item[open]>.faq-question .faq-icon::after {
+    transform: translateY(-50%) rotate(0deg);
+}
+
+.faq-answer {
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+    color: #555;
+    line-height: 1.7;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 0rem;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==================================
+      Final CTA Section - Checkliste #8.1
+      ================================== */
+#final-cta {
+    /* ID aus HTML verwenden */
+    /* Erbt padding von .content-section */
+    background-color: #0056b3;
+    /* Dunkleres Blau für Kontrast */
+    color: #fff;
+    text-align: center;
+}
+
+#final-cta h2 {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+#final-cta .section-intro {
+    /* Überschreibt Standard .section-intro Farbe */
+    color: #e0e0e0;
+    /* Hellerer Text auf dunklem Grund */
+    margin-bottom: 2rem;
+}
+
+#final-cta .cta-button {
+    background-color: #28a745;
+    /* Grüner Button für Kontrast */
+    color: #fff;
+}
+
+#final-cta .cta-button:hover {
+    background-color: #218838;
+    /* Dunkleres Grün */
+}
+
+/* Styling für optionalen letzten Trust-Boost - Checkliste #9.3 */
+.final-trust-boost {
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #ffc107;
+    /* Beispiel: Goldgelb */
+    font-size: 1.1rem;
+}
+
+
+/* ==================================
       Mobile CTA Button Styles (Global)
       ================================== */
-   /* Das Listenelement für den mobilen CTA standardmäßig (Desktop) ausblenden */
-   .mobile-nav-cta-item {
-       display: none;
-       padding: 1rem 1rem; /* Oben/Unten und Rechts/Links Padding */
-       border-top: 1px solid #eee; /* Trennlinie über dem Button */
-       text-align: center; /* Zentriert den Button innerhalb des LIs */
-   }
-   
-   /* Styling für den CTA-Button selbst im mobilen Menü */
-   .mobile-nav-cta {
-       /* Erbt viel von .cta-button */
-       display: inline-block; /* Lässt den Button zentrieren */
-       width: auto;
-       max-width: 90%; /* Verhindert übermäßige Breite */
-       padding: 0.8rem 2rem; /* Angepasstes Padding */
-   }
-   
-   /* ==================================
+.mobile-nav-cta-item {
+    display: none;
+    /* Standardmäßig ausblenden */
+    padding: 1rem 1rem;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.mobile-nav-cta {
+    display: inline-block;
+    width: auto;
+    max-width: 90%;
+    padding: 0.8rem 2rem;
+    /* Erbt .cta-button Stile */
+}
+
+/* ==================================
       Footer
       ================================== */
-   .footer-section {
-       background-color: #343a40; /* Dunkler Footer */
-       color: #ccc;
-       padding: 2rem 0;
-       text-align: center;
-       font-size: 0.9rem;
-   }
-   
-   .footer-section .container {
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-       gap: 0.5rem;
-   }
-   
-   .footer-section p {
-       margin-bottom: 0.5rem;
-   }
-   
-   .footer-nav a {
-       color: #ccc;
-       margin: 0 0.5rem;
-   }
-   
-   .footer-nav a:hover {
-       color: #fff;
-   }
-   
-   /* ==================================
+.footer-section {
+    background-color: #343a40;
+    color: #ccc;
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-section p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-nav a {
+    color: #ccc;
+    margin: 0 0.5rem;
+}
+
+.footer-nav a:hover {
+    color: #fff;
+}
+
+/* Styling für zusätzliche Kontaktinfo - Checkliste #8.4 */
+.footer-contact {
+    margin-top: 1rem;
+    color: #aaa;
+}
+
+.footer-contact a {
+    color: #ccc;
+}
+
+.footer-contact a:hover {
+    color: #fff;
+}
+
+
+/* ==================================
       Responsivität (Media Queries)
       ================================== */
-   
-   /* --- 992px Breakpoint (Tablets) --- */
-   @media (max-width: 992px) {
-       /* Hero Section: Text über Bild */
-       .hero-grid {
-           grid-template-columns: 1fr;
-           text-align: center;
-       }
-       .hero-content-left {
-           /* order: 2; */ /* Entfernt -> Standardreihenfolge */
-           margin-bottom: 2rem; /* Abstand unter Textblock */
-       }
-       .hero-visual-right {
-           /* order: 1; */ /* Entfernt -> Standardreihenfolge */
-           margin-bottom: 0; /* Keinen Abstand mehr hier */
-       }
-       .hero-image {
-           margin: 0 auto; /* Zentriert */
-       }
-   
-       /* Process Section: Bild ausblenden */
-       .process-layout-grid {
-           grid-template-columns: 1fr;
-       }
-       .process-image-column {
-           display: none;
-       }
-   
-       /* Case Study: Karten untereinander */
-       .case-study-grid {
-           grid-template-columns: 1fr;
-           gap: 2rem;
-       }
-   } /* Ende @media (max-width: 992px) */
-   
-   
-   /* --- 768px Breakpoint (Mobile) --- */
-   @media (max-width: 768px) {
-       /* Allgemeine Schriftgrößen anpassen */
-       h1 { font-size: 2rem; }
-       h2 { font-size: 1.75rem; }
-       h3 { font-size: 1.3rem; }
-   
-       /* Mobile Header & Navigation */
-       .main-nav {
-           display: none;
-           position: absolute;
-           top: 71px; /* Höhe des Headers anpassen! */
-           left: 0;
-           width: 100%;
-           background-color: #fff;
-           box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-           padding-top: 0; /* Padding oben entfernen, da LIs Padding haben */
-           padding-bottom: 0; /* Padding unten entfernen */
-           border-top: 1px solid #eee;
-       }
-       .main-nav .nav-list {
-           flex-direction: column;
-           align-items: stretch; /* Volle Breite für Listenelemente */
-           gap: 0;
-       }
-       .main-nav .nav-link {
-           display: block;
-           padding: 0.8rem 1rem;
-           width: 100%;
-           text-align: center;
-           border-bottom: 1px solid #eee;
-       }
-       /* Letzter normaler Link hat keinen Rand mehr, wenn CTA folgt */
-       /* (wird durch spezifischen Rand am CTA-LI überschrieben) */
-       .main-nav .nav-list li:not(.mobile-nav-cta-item):last-child .nav-link {
-            border-bottom: none;
-       }
-   
-   
-       .mobile-nav-toggle {
-           display: block; /* Toggle Button anzeigen */
-       }
-   
-       .header-cta-button {
-           display: none; /* Originalen Header-CTA ausblenden */
-       }
-   
-       /* Mobilen CTA im geöffneten Menü anzeigen */
-       body.nav-open .mobile-nav-cta-item {
-           display: block;
-       }
-   
-       /* Sektions-Padding reduzieren */
-       .content-section { padding: 3rem 0; }
-       .new-hero-section { padding: 3rem 0; }
-       .hero-grid { gap: 2rem; }
-       .hero-headline { font-size: 2.2rem; }
-   
-       /* Grids auf eine Spalte */
-       .features-grid { grid-template-columns: 1fr; }
-       .simple-pricing-grid { grid-template-columns: 1fr; }
-   
-       /* Case Study Anpassungen für Mobile */
-       .case-study-before,
-       .case-study-after {
-           padding: 1.5rem; /* Padding reduzieren */
-       }
-        /* Überschriften in Case Study an mobile H3 anpassen */
-       .case-study-before h3,
-       .case-study-after h3 {
-           font-size: 1.3rem;
-       }
-       .case-study-grid li {
-           padding-left: 1.6em;
-           margin-bottom: 0.7rem;
-       }
-       .case-study-after li.result {
-           padding: 0.7rem 0.8rem 0.7rem 2.5em;
-       }
-        .case-study-after li.result::before {
-           left: 0.6em;
-       }
-   
-   
-       /* FAQ Anpassungen für Mobile */
-       .faq-question {
-           padding: 0.8rem 1rem;
-       }
-       .faq-answer {
-            padding: 1rem 1rem 1rem 1rem; /* Dein Padding, links/rechts angepasst */
-       }
-       .faq-container {
-           max-width: 100%; /* Volle Breite */
-       }
-   
-       /* Footer Layout */
-       .footer-section .container {
-           /* Bleibt column */
-       }
-       .footer-nav {
-           display: flex;
-           flex-direction: column; /* Links untereinander */
-           gap: 0.3rem;
-       }
-        .footer-nav a {
-            margin: 0;
-        }
-   
-        .content-image {
-            max-width: 100%; /* Bild passt sich an Container an */
-        }
-   } /* Ende @media (max-width: 768px) */
+
+/* --- 992px Breakpoint (Tablets) --- */
+@media (max-width: 992px) {
+
+    /* Hero Section: Text über Bild */
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-benefits li {
+        justify-content: center;
+        /* Zentriert den Inhalt (Haken + Text) innerhalb des LI */
+    }
+
+    .hero-content-left {
+        /* order entfernt */
+        margin-bottom: 3rem;
+    }
+
+    .hero-visual-right {
+        /* order entfernt */
+        margin-bottom: 0;
+    }
+
+    .hero-image {
+        margin: 0 auto;
+    }
+
+    .hero-trust-text {
+        text-align: center;
+        /* Zentriert den Text auf Tablets/Mobile */
+        margin-bottom: 1.5rem;
+        /* Abstand zu den Logos */
+    }
+
+    .hero-trust-logos {
+        margin-top: 1rem;
+        /* Weniger Abstand, da Text davor ist */
+        justify-content: center;
+        /* Sicherstellen, dass Logos zentriert sind */
+    }
+
+
+    /* Process Section: Bild ausblenden */
+    .process-layout-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-image-column {
+        display: none;
+    }
+
+    /* Case Study: Karten untereinander */
+    .case-study-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Ende @media (max-width: 992px) */
+
+
+/* --- 768px Breakpoint (Mobile) --- */
+@media (max-width: 768px) {
+
+    /* Allgemeine Schriftgrößen anpassen */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    /* Mobile Header & Navigation */
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 71px;
+        /* Höhe des Headers anpassen! */
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        padding-top: 0;
+        padding-bottom: 0;
+        border-top: 1px solid #eee;
+    }
+
+    .main-nav .nav-list {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .main-nav .nav-link {
+        display: block;
+        padding: 0.8rem 1rem;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+
+    .main-nav .nav-list li:not(.mobile-nav-cta-item):last-child .nav-link {
+        border-bottom: none;
+    }
+
+    .hero-trust-text span {
+        display: block;
+        /* Untereinander auf Mobile? */
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-trust-text span:last-child {
+        margin-bottom: 0;
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    .header-cta-button {
+        display: none;
+    }
+
+    /* Mobilen CTA im geöffneten Menü anzeigen */
+    body.nav-open .mobile-nav-cta-item {
+        display: block;
+    }
+
+    /* Sektions-Padding reduzieren */
+    .content-section {
+        padding: 3rem 0;
+    }
+
+    .new-hero-section {
+        padding: 2rem 0;
+    }
+
+    .hero-grid {
+        gap: 2rem;
+    }
+
+    .hero-headline {
+        font-size: 2.2rem;
+    }
+
+    /* Grids auf eine Spalte */
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .simple-pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Case Study Anpassungen für Mobile */
+    .case-study-before,
+    .case-study-after {
+        padding: 1.5rem;
+    }
+
+    .case-study-before h3,
+    .case-study-after h3 {
+        font-size: 1.3rem;
+    }
+
+    .case-study-grid li {
+        padding-left: 1.6em;
+        margin-bottom: 0.7rem;
+    }
+
+    .case-study-after li.result {
+        padding: 0.7rem 0.8rem 0.7rem 2.5em;
+    }
+
+    .case-study-after li.result::before {
+        left: 0.6em;
+    }
+
+    .video-placeholder-wrapper {
+        max-width: 100%;
+        /* Volle Breite auf Mobile */
+    }
+
+    .play-button-svg {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* FAQ Anpassungen für Mobile */
+    .faq-question {
+        padding: 0.8rem 1rem;
+    }
+
+    .faq-answer {
+        padding: 1rem 1rem 1rem 1rem;
+    }
+
+    .faq-container {
+        max-width: 100%;
+    }
+
+    /* Footer Layout */
+    .footer-section .container {
+        /* Bleibt column */
+    }
+
+    .footer-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .footer-nav a {
+        margin: 0;
+    }
+
+    .content-image {
+        max-width: 100%;
+    }
+}
+
+/* Ende @media (max-width: 768px) */
