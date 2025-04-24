@@ -11,6 +11,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Cal floating-popup embed code begins -->
+    <script type="text/javascript">
+        (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+        Cal("init", "30min", { origin: "https://cal.com" });
+
+        Cal.ns["30min"]("ui", { "theme": "light", "cssVarsPerTheme": { "light": { "cal-brand": "#007bff" } }, "hideEventTypeDetails": false, "layout": "month_view" });
+    </script>
+    <!-- Cal floating-popup embed code ends -->
 </head>
 
 <body>
@@ -39,7 +47,9 @@
             </nav>
 
             <div class="header-right-container">
-                <a href="#offer" class="cta-button header-cta-button">Kostenloses Erstgespräch</a>
+                <a class="cta-button header-cta-button" data-cal-link="jan-van-de-weyer-jhbszh/30min"
+                    data-cal-namespace="30min" data-cal-config='{"layout":"month_view"}'>
+                    Kostenloses Erstgespräch</a>
 
                 <button class="mobile-nav-toggle" aria-label="Menü umschalten" aria-expanded="false"
                     aria-controls="main-navigation">
@@ -87,12 +97,13 @@
                             </li>
                         </ul>
 
-                        <a href="#offer" class="cta-button hero-cta cta-prominent">
+                        <a class="cta-button hero-cta cta-prominent" data-cal-link="jan-van-de-weyer-jhbszh/30min"
+                            data-cal-namespace="30min" data-cal-config='{"layout":"month_view"}'>
                             Kostenloses Erstgespräch buchen
                         </a>
 
                         <div class="hero-trust-text">
-                            <span style="color: gold;">★</span>5/5 Bewertung vom ersten Projekt – mit Begeisterung
+                            <span style="color: gold;">★★★★★</span>5/5 Bewertung vom ersten Projekt – mit Begeisterung
                             empfohlen
                         </div>
 
@@ -316,7 +327,8 @@
             <div class="container">
                 <h2 style="text-align: center;">Eine Nachricht von einem unserer Kunden</h2>
                 <p class="section-intro">
-                    Erfahren Sie direkt von Thomas, wie salesfast sein Unternehmen verbessert hat und wie die Zusammenarbeit verlief.
+                    Erfahren Sie direkt von Thomas, wie salesfast sein Unternehmen verbessert hat und wie die
+                    Zusammenarbeit verlief.
                 </p>
 
                 <div class="video-placeholder-wrapper">
@@ -363,10 +375,7 @@
                     <div class="pricing-card basis">
                         <h3>Basis</h3>
                         <p class="package-description">Der ideale Einstieg für Selbstständige & kleine Teams.</p>
-                        <div class="price">
-                            <strong>900 €</strong>
-                            <span class="vat-notice">(zzgl. MwSt.)</span>
-                        </div>
+
                         <ul class="features-list">
                             <li>Umfassender Videokurs</li>
                             <li>Praxiserprobte Vorlagen</li>
@@ -382,11 +391,6 @@
                         <span class="badge">Beliebtestes Paket</span>
                         <h3>Standard</h3>
                         <p class="package-description">Die Komplettlösung für ambitionierte Unternehmen.</p>
-                        <div class="price">
-                            <strong>3.900 €</strong>
-                            <span class="vat-notice">(zzgl. MwSt.)</span>
-                            <p><small>(statt 5900,- €)</small></p>
-                        </div>
                         <ul class="features-list">
                             <li>Umfassender Videokurs</li>
                             <li>Praxiserprobte Vorlagen</li>
@@ -407,9 +411,7 @@
                         <h3>Erweitert (Premium)</h3>
                         <p class="package-description">Maximale Unterstützung für schnelles Wachstum & komplexe Setups.
                         </p>
-                        <div class="price">
-                            <strong>Individuell</strong>
-                        </div>
+
                         <ul class="features-list">
                             <li>Umfassender Videokurs</li>
                             <li>Praxiserprobte Vorlagen</li>
@@ -425,7 +427,7 @@
 
                 </div>
             </div>
-        </section> 
+        </section>
         <section id="faq" class="content-section bg-light">
             <div class="container">
                 <h2>Häufig gestellte Fragen (FAQ)</h2>
@@ -520,7 +522,8 @@
                 <a href="#impressum">Impressum</a> |
                 <a href="#datenschutz">Datenschutz</a>
             </nav>
-            <p class="footer-contact">Fragen? Gerne per Mail an: <a href="mailto:info@salesfast.io">info@salesfast.io</a></p>
+            <p class="footer-contact">Fragen? Gerne per Mail an: <a
+                    href="mailto:info@salesfast.io">info@salesfast.io</a></p>
         </div>
     </footer>
     <script src="script.js"></script>
