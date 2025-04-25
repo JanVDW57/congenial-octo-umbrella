@@ -11,14 +11,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Cal floating-popup embed code begins -->
+    <!-- Cal element-click embed code begins -->
     <script type="text/javascript">
         (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
         Cal("init", "30min", { origin: "https://cal.com" });
 
-        Cal.ns["30min"]("ui", { "theme": "light", "cssVarsPerTheme": { "light": { "cal-brand": "#007bff" } }, "hideEventTypeDetails": false, "layout": "month_view" });
+
+        // Important: Please add the following attributes to the element that should trigger the calendar to open upon clicking.
+        // `data-cal-link="jan-van-de-weyer-jhbszh/30min"`
+        // data-cal-namespace="30min"
+        // `data-cal-config='{"layout":"month_view","theme":"auto"}'`
+
+        Cal.ns["30min"]("ui", { "cssVarsPerTheme": { "light": { "cal-brand": "#007bff" }, "dark": { "cal-brand": "#007bff" } }, "hideEventTypeDetails": false, "layout": "month_view" });
     </script>
-    <!-- Cal floating-popup embed code ends -->
+    <!-- Cal element-click embed code ends -->
 </head>
 
 <body>
@@ -38,7 +44,7 @@
                     <li><a href="#problem" class="nav-link">Probleme</a></li>
                     <li><a href="#solution" class="nav-link">Lösung</a></li>
                     <li><a href="#casestudy" class="nav-link">Fallstudie</a></li>
-                    <li><a href="#offer" class="nav-link">Preise</a></li>
+                    <li><a href="#offer" class="nav-link">Pakete</a></li>
                     <li><a href="#faq" class="nav-link">FAQ</a></li>
                     <li class="mobile-nav-cta-item">
                         <a href="#offer" class="cta-button mobile-nav-cta">Kostenloses Erstgespräch</a>
@@ -103,8 +109,7 @@
                         </a>
 
                         <div class="hero-trust-text">
-                            <span style="color: gold;">★★★★★</span>5/5 Bewertung vom ersten Projekt – mit Begeisterung
-                            empfohlen
+                            <span style="color: gold;">★★★★★</span>Bewertung vom ersten Projekt
                         </div>
 
                     </div>
@@ -114,12 +119,12 @@
                     </div>
 
                 </div>
-                <div class="hero-trust-logos"> <span>Bekannt aus / Vertrauen uns:</span>
+                <!--<div class="hero-trust-logos"> <span>Bekannt aus / Vertrauen uns:</span>
                     <img src="gdrive_logo.svg" alt="Kundenlogo 1">
                     <img src="aws_logo.svg" alt="Kundenlogo 2">
                     <img src="meet_logo.svg" alt="Kundenlogo 3">
                     <img src="g_logo.svg" alt="Kundenlogo 3">
-                </div>
+                </div>-->
 
             </div>
         </section>
@@ -244,8 +249,8 @@
                             </div>
                             <div class="process-step-content">
                                 <h3>Einrichtung & Konfiguration des CRM-Systems</h3>
-                                <p><strong>Wir wählen das passende CRM</strong> (wie Close.com) aus und richten es
-                                    maßgeschneidert auf Ihre Bedürfnisse ein – inklusive Datenimport.</p>
+                                <p><strong>Wir wählen gemeinsam das passende CRM</strong> aus und richten es
+                                    maßgeschneidert auf Ihre Bedürfnisse ein.</p>
                             </div>
                         </div>
                         <div class="process-step-item">
@@ -255,7 +260,8 @@
                             </div>
                             <div class="process-step-content">
                                 <h3>Implementierung von Automatisierungen</h3>
-                                <p><strong>Wir nutzen Tools wie Make.com</strong>, um wiederkehrende Aufgaben (z.B.
+                                <p><strong>Wir nutzen Tools wie Zapier oder Make.com</strong>, um wiederkehrende
+                                    Aufgaben (z.B.
                                     Follow-Ups, Dateneingabe) zu automatisieren und Ihnen Zeit zu sparen.</p>
                             </div>
                         </div>
@@ -277,8 +283,8 @@
                             </div>
                             <div class="process-step-content">
                                 <h3>Kontinuierliche Optimierung (optional)</h3>
-                                <p><strong>Im "Done with You"-Paket begleiten wir Sie weiter</strong>, analysieren KPIs
-                                    und nehmen fortlaufend Anpassungen zur Verbesserung vor.</p>
+                                <p>Auf Wunsch begleiten wir Sie weiter, analysieren KPIs und nehmen fortlaufend
+                                    Anpassungen zur Verbesserung vor.</p>
                             </div>
                         </div>
                     </div>
@@ -323,21 +329,32 @@
                 </div>
                 <div class="case-study-visualization">
                     <h3>Der Effekt: Kosten runter, Umsatz rauf!</h3>
-                    <img src="image_kostenumsatz.png"
-                        alt="Grafik: Kostensenkung und Umsatzsteigerung durch SalesFast" class="case-study-viz-image">
-                    <p class="visualization-caption">Klare Vertriebsstrukturen steigern den Umsatz und senken die Kosten.</p>
+                    <img src="image_kostenumsatz.png" alt="Grafik: Kostensenkung und Umsatzsteigerung durch SalesFast"
+                        class="case-study-viz-image">
+                    <p class="visualization-caption">Klare Vertriebsstrukturen steigern den Umsatz und senken die
+                        Kosten.</p>
                 </div>
                 <div class="case-study-studies">
-                    <h3>Wissenschaftlich belegt: Struktur zahlt sich aus</h3>
+                    <h3>Wissenschaftlich belegt: Struktur und Follow Up zahlt sich aus</h3>
                     <blockquote>
-                        <p>"Unternehmen mit klar definierten Verkaufsprozessen erzielen nachweislich höhere
-                            Abschlussquoten. Eine Studie von [Quelle] zeigt..."</p>
-                        <footer>– Quelle: [Name der Studie/Link]</footer>
+                        <p>"Firmen mit einem standardisierten Vertriebsprozess erzielen einen bis
+                            zu 28 % höheren Umsatz im Vergleich zu Unternehmen ohne strukturierten Ansatz"</p>
+                        <footer>– Quelle: <a href="https://hbr.org/2004/11/crm-done-right" target="_blank"
+                                rel="noopener noreferrer">Harvard Business Review</a>
+                        </footer>
+
                     </blockquote>
+                    <!--<blockquote>
+                        <p>"Nur 2 % der Verkäufe werden bereits beim ersten Kontakt abgeschlossen – folglich finden 98 %
+                            der Abschlüsse erst durch Nachfassen statt​."</p>
+                        <footer>– Quelle: <a href="https://www.fundera.com/resources/sales-statistics" target="_blank"
+                                rel="noopener noreferrer">Sales Statistics – Fundera</a></footer>
+                    </blockquote>-->
                     <blockquote>
-                        <p>"Die Implementierung eines strukturierten Follow-Up-Systems kann die Konversionsrate um bis
-                            zu [Zahl]% steigern."</p>
-                        <footer>– Quelle: [Name der Studie/Link]</footer>
+                        <p>"80 % der Deals werden erst nach mindestens fünf Follow-up-Kontakten
+                            erfolgreich zum Abschluss gebracht​."</p>
+                        <footer>– Quelle: <a href="https://www.fundera.com/resources/sales-statistics" target="_blank"
+                                rel="noopener noreferrer">Fundera</a></footer>
                     </blockquote>
                 </div>
             </div>
@@ -353,7 +370,7 @@
                 <div class="video-placeholder-wrapper">
                     <div class="video-placeholder-content">
                         <iframe width="100%" height="100%"
-                            src="https://www.youtube.com/embed/KgayxOF4Y7E?rel=0&modestbranding=1&showinfo=0&autohide=1&controls=1"
+                            src="https://www.youtube.com/embed/BsIXkbxrawo?si=IOe7HpfSnK11umfg"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen>
@@ -398,6 +415,7 @@
                         <ul class="features-list">
                             <li>Umfassender Videokurs</li>
                             <li>Praxiserprobte Vorlagen</li>
+                            <li>Prozessanalyse</li>
                             <li class="unavailable">Wöchentliche Live-Q&A-Calls</li>
                             <li>4 Wochen persönliche Betreuung</li>
                             <li class="unavailable">Erweiterte Systemanalyse</li>
@@ -413,6 +431,7 @@
                         <ul class="features-list">
                             <li>Umfassender Videokurs</li>
                             <li>Praxiserprobte Vorlagen</li>
+                            <li>Prozessanalyse</li>
                             <li>Wöchentliche Live-Q&A-Calls (Mi & Fr)</li>
                             <li>6 Wochen persönliche Betreuung</li>
                             <li>Erweiterte Systemanalyse (1 Std.)</li>
@@ -434,6 +453,7 @@
                         <ul class="features-list">
                             <li>Umfassender Videokurs</li>
                             <li>Praxiserprobte Vorlagen</li>
+                            <li>Prozessanalyse</li>
                             <li>Wöchentliche Live-Q&A-Calls (Mi & Fr)</li>
                             <li><strong>12 Wochen</strong> persönliche Betreuung</li>
                             <li><strong>Zwei</strong> gemeinsame Systemanalysen</li>
@@ -467,7 +487,37 @@
                                 oder keine klaren Prozesse haben.</p>
                         </div>
                     </details>
-
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            Was kostet die Einrichtung?
+                            <span class="faq-icon"></span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>
+                                Die Kosten für die einmalige Einrichtung Ihres SalesFast Systems sind abhängig vom
+                                gewählten Leistungspaket und der Komplexität Ihrer individuellen Anforderungen.
+                                Genaueres dazu und ein passendes Angebot besprechen wir gerne unverbindlich im
+                                persönlichen Erstgespräch.</p> <br>
+                            <a id="faq-cal-button" class="cta-button small-cta"
+                                data-cal-link="jan-van-de-weyer-jhbszh/30min?utm_source=salesfast_website&utm_medium=cta_button&utm_campaign=erstgespraech&utm_content=faq_section"
+                                data-cal-namespace="30min" data-cal-config='{"layout":"month_view"}'>
+                                Unverbindliches Erstgespräch buchen </a>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            Wie hoch sind die laufenden Kosten?
+                            <span class="faq-icon"></span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>
+                                Für Einzelunternehmer oder kleine Teams belaufen sich die monatlichen Kosten für die
+                                notwendigen Tools in der Regel auf etwa <strong>100 € pro Monat.</strong><br><br>
+                                Höhere Kosten fallen nur dann an, wenn Ihr Unternehmen wächst – also zum Beispiel mehr
+                                Benutzer für das CRM benötigt werden – oder wenn die Automatisierungen in sehr hohem
+                                Umfang genutzt werden.</p>
+                        </div>
+                    </details>
                     <details class="faq-item">
                         <summary class="faq-question">
                             Welche Tools werden hauptsächlich verwendet?
@@ -476,7 +526,7 @@
                         <div class="faq-answer">
                             <p>Wir setzen auf bewährte und flexible Tools. Kernbestandteil ist oft ein CRM-System wie
                                 z.B. Close.com, Pipedrive oder HubSpot (je nach Bedarf). Für die Automatisierung nutzen
-                                wir häufig Make.com (ehemals Integromat) oder Zapier, um das CRM mit anderen Tools
+                                wir häufig Make.com oder Zapier, um das CRM mit anderen Tools
                                 (Kalender, E-Mail, etc.) zu verbinden.</p>
                         </div>
                     </details>
@@ -500,8 +550,8 @@
                             <span class="faq-icon"></span>
                         </summary>
                         <div class="faq-answer">
-                            <p>Nein. Wir übernehmen die technische Einrichtung vollständig und schulen Sie und Ihr Team
-                                Schritt-für-Schritt im neuen System.</p>
+                            <p>Nein. Sie erhalten Schritt-für-Schritt neue Videos und Dokumente, die Ihnen bei der
+                                Einrichtung und der Anwendung helfen.</p>
                         </div>
                     </details>
 
@@ -511,9 +561,11 @@
                             <span class="faq-icon"></span>
                         </summary>
                         <div class="faq-answer">
-                            <p>Nach der Übergabe können Sie das System selbstständig nutzen. Je nach Paket bieten wir
-                                weitere Betreuung an (z.B. Q&A Calls, Mastermind Calls, fortlaufende Optimierung). Ziel
-                                ist, dass Sie langfristig erfolgreich mit dem System arbeiten.</p>
+                            <p>Nach der Übergabe können Sie das System selbstständig nutzen. Je nach Wunsch bieten wir
+                                weitere Betreuung an (z.B. KPIs analysieren, fortlaufende Optimierung, 1-zu-1 Calls).
+                                Ziel
+                                ist, dass Sie langfristig erfolgreich mit dem System arbeiten und mehr Geld in weniger
+                                Zeit verdienen.</p>
                         </div>
                     </details>
 
@@ -528,7 +580,10 @@
                     Vereinbaren Sie jetzt Ihr kostenloses Erstgespräch und starten Sie durch zu mehr Struktur und Umsatz
                     im Vertrieb.
                 </p>
-                <a href="#offer" class="cta-button large-cta">Jetzt kostenloses Erstgespräch sichern (ca. 30 Min.)</a>
+                <a id="footer-cal-button" class="cta-button large-cta"
+                                data-cal-link="jan-van-de-weyer-jhbszh/30min?utm_source=salesfast_website&utm_medium=cta_button&utm_campaign=erstgespraech&utm_content=faq_section"
+                                data-cal-namespace="30min" data-cal-config='{"layout":"month_view"}'>
+                                Kostenloses Erstgespräch buchen</a>
             </div>
         </section>
 

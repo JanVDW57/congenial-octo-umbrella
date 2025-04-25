@@ -176,6 +176,12 @@ h3 {
     font-size: 1.1rem;
 }
 
+.small-cta {
+    padding: 0.8rem 1.6rem;
+    
+}
+
+
 /* Spezieller Stil für hervorgehobene CTAs (z.B. Hero) - Checkliste #1.3 */
 .cta-button.cta-prominent {
     background-color: #28a745;
@@ -509,6 +515,61 @@ body.nav-open .mobile-nav-toggle .close-icon {
 }
 
 /* ==================================
+   Features Grid (Problem & Benefits Sections) - ÜBERARBEITET für #problem
+   ================================== */
+
+/* ANPASSUNG: Spezifische Regeln für das Grid im Problem-Abschnitt */
+#problem .features-grid {
+    display: grid;
+    /* Standard (Desktop): 5 Spalten */
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    /* Ggf. Abstand leicht reduziert für 5 Spalten */
+    align-items: stretch;
+    /* Sorgt dafür, dass alle Boxen in einer Reihe gleich hoch sind */
+}
+
+/* ANPASSUNG: Regeln für die Items, um Höhe und Inhalt zu steuern */
+#problem .feature-item {
+    text-align: center;
+    padding: 2rem 1rem;
+    /* Mehr vertikales Padding für mehr Höhe */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; wird beibehalten */
+    min-height: 280px;
+    /* Beispiel: Mindesthöhe festlegen (Wert anpassen!) */
+}
+
+#problem .feature-item .icon {
+    max-width: 45px;
+    /* Ggf. Icons leicht verkleinern */
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+    /* Verhindert Schrumpfen des Icons */
+}
+
+#problem .feature-item h3 {
+    font-size: 1.1rem;
+    /* Ggf. Schriftgröße anpassen */
+    margin-bottom: 0.75rem;
+    flex-shrink: 0;
+}
+
+#problem .feature-item p {
+    color: #555;
+    font-size: 0.9rem;
+    /* Ggf. Schriftgröße anpassen */
+    flex-grow: 1;
+    /* Lässt den Text den verfügbaren Platz füllen */
+    margin-bottom: 0;
+    /* Kein Abstand am Ende des Absatzes */
+}
+
+/* ==================================
       Process Section
       ================================== */
 .process-layout-grid {
@@ -708,10 +769,13 @@ body.nav-open .mobile-nav-toggle .close-icon {
    Case Study Section - Ergänzungen
    ================================== */
 
-   .case-study-visualization {
-    margin-top: 3rem; /* Abstand zur Grid */
-    padding-top: 2rem; /* Optional: Weiterer Abstand oder Linie */
-    border-top: 1px solid #eee; /* Optionale Trennlinie */
+.case-study-visualization {
+    margin-top: 3rem;
+    /* Abstand zur Grid */
+    padding-top: 2rem;
+    /* Optional: Weiterer Abstand oder Linie */
+    border-top: 1px solid #eee;
+    /* Optionale Trennlinie */
     text-align: center;
 }
 
@@ -721,14 +785,19 @@ body.nav-open .mobile-nav-toggle .close-icon {
     color: #333;
 }
 
-.case-study-viz-image { /* Styling für das Bild */
+.case-study-viz-image {
+    /* Styling für das Bild */
     max-width: 100%;
-    width: 600px; /* Maximale Breite begrenzen */
+    width: 600px;
+    /* Maximale Breite begrenzen */
     height: auto;
-    margin: 0 auto 1rem auto; /* Zentrieren mit Abstand unten */
+    margin: 0 auto 1rem auto;
+    /* Zentrieren mit Abstand unten */
     display: block;
-    border-radius: 8px; /* Optional */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Optionaler Schatten */
+    border-radius: 8px;
+    /* Optional */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Optionaler Schatten */
 }
 
 .visualization-caption {
@@ -739,12 +808,16 @@ body.nav-open .mobile-nav-toggle .close-icon {
 }
 
 .case-study-studies {
-    margin-top: 3rem; /* Abstand zur Visualisierung */
+    margin-top: 3rem;
+    /* Abstand zur Visualisierung */
     padding: 2rem;
-    background-color: #f8f9fa; /* Leichter Hintergrund zur Abgrenzung */
-    border: 1px solid #e9ecef; /* Passender Rand */
+    background-color: #f8f9fa;
+    /* Leichter Hintergrund zur Abgrenzung */
+    border: 1px solid #e9ecef;
+    /* Passender Rand */
     border-radius: 8px;
-    max-width: 800px; /* Begrenzte Breite für Lesbarkeit */
+    max-width: 800px;
+    /* Begrenzte Breite für Lesbarkeit */
     margin-left: auto;
     margin-right: auto;
 }
@@ -759,10 +832,12 @@ body.nav-open .mobile-nav-toggle .close-icon {
 .case-study-studies blockquote {
     margin-bottom: 1.5rem;
     padding-left: 1.5rem;
-    border-left: 4px solid #007bff; /* Blaue Akzentlinie */
+    border-left: 4px solid #007bff;
+    /* Blaue Akzentlinie */
     font-style: italic;
     color: #555;
 }
+
 .case-study-studies blockquote:last-child {
     margin-bottom: 0;
 }
@@ -1257,6 +1332,11 @@ body.nav-open .mobile-nav-toggle .close-icon {
     color: #fff;
 }
 
+@media (max-width: 1140px) {
+    #problem .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 
 /* ==================================
       Responsivität (Media Queries)
@@ -1414,6 +1494,18 @@ body.nav-open .mobile-nav-toggle .close-icon {
         font-size: 2.2rem;
     }
 
+    #problem .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        /* Ggf. Abstand weiter reduzieren */
+    }
+
+    #problem .feature-item {
+        min-height: auto;
+        /* Mindesthöhe auf Mobile aufheben oder reduzieren */
+        padding: 1.5rem 1rem;
+    }
+
     /* Grids auf eine Spalte */
     .features-grid {
         grid-template-columns: 1fr;
@@ -1450,12 +1542,16 @@ body.nav-open .mobile-nav-toggle .close-icon {
     .case-study-studies {
         padding: 1.5rem;
     }
+
     .case-study-visualization h3,
     .case-study-studies h3 {
-        font-size: 1.3rem; /* An mobile h3 anpassen */
+        font-size: 1.3rem;
+        /* An mobile h3 anpassen */
     }
+
     .case-study-viz-image {
-        width: 100%; /* Volle Breite auf Mobile */
+        width: 100%;
+        /* Volle Breite auf Mobile */
     }
 
     .video-placeholder-wrapper {
@@ -1502,3 +1598,10 @@ body.nav-open .mobile-nav-toggle .close-icon {
 }
 
 /* Ende @media (max-width: 768px) */
+
+/* Anpassung für kleine Handys (z.B. unter 480px) -> 1 Spalte */
+@media (max-width: 480px) {
+    #problem .features-grid {
+        grid-template-columns: 1fr; /* Nur noch eine Spalte */
+    }
+}
