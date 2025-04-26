@@ -47,6 +47,7 @@ ul {
     list-style: none;
 }
 
+/* Globale Überschriften-Abstände (Hinweis: Kein margin-top global definiert, Abstand oben via <br> im HTML oder margin-bottom des vorherigen Elements) */
 h1,
 h2,
 h3 {
@@ -63,10 +64,12 @@ h1 {
 
 h2 {
     font-size: 2rem;
+    /* margin-top: 3rem;  <-- Explizit NICHT global hinzugefügt nach User-Wunsch */
 }
 
 h3 {
     font-size: 1.5rem;
+    /* margin-top: 2rem;  <-- Explizit NICHT global hinzugefügt nach User-Wunsch */
 }
 
 /* ==================================
@@ -176,9 +179,12 @@ h3 {
     font-size: 1.1rem;
 }
 
+/* Kleinerer CTA (Beispiel) */
 .small-cta {
-    padding: 0.8rem 1.6rem;
-    
+    padding: 0.6rem 1.2rem;
+    /* Kleineres Padding */
+    font-size: 0.9rem;
+    /* Kleinere Schrift */
 }
 
 
@@ -187,7 +193,9 @@ h3 {
     background-color: #28a745;
     /* Grün (Erfolgsfarbe) */
     padding: 1rem 2rem;
+    /* Beibehaltung Padding von large-cta */
     font-size: 1.1rem;
+    /* Beibehaltung Font-Size von large-cta */
     box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
 }
 
@@ -288,7 +296,7 @@ body.nav-open .mobile-nav-toggle .close-icon {
       Hero Section
       ================================== */
 .new-hero-section {
-    padding: 5rem 0;
+    padding: 3rem 0;
     background-color: #eef2f7;
     /* Leicht anderer Hintergrund */
 }
@@ -313,11 +321,12 @@ body.nav-open .mobile-nav-toggle .close-icon {
 }
 
 .highlight-bg {
-    /* Für "praxiserprobt" */
+    /* Für "praxiserprobt" und "7 Tagen" */
     background-color: #d1e7ff;
     /* Heller blauer Hintergrund */
-    padding: 0.1em 0.3em;
+    padding: 0.1em 0.4em;
     border-radius: 3px;
+    /* Kein Icon-Styling mehr hier */
 }
 
 .hero-subtitle {
@@ -326,13 +335,40 @@ body.nav-open .mobile-nav-toggle .close-icon {
     color: #555;
 }
 
+/* Styling für optionalen Untertitel - Checkliste #1.1 */
+.hero-undertitle {
+    font-size: 1rem;
+    color: #555;
+    margin-top: -0.5rem;
+    /* Näher an Subtitle rücken */
+    margin-bottom: 1.5rem;
+    /* display: none;  -> Wird im HTML gesteuert, ob er da ist */
+}
+
+
 .hero-subline {
     margin-bottom: 1.5rem;
     color: #666;
 }
 
+/* Hero Benefits - KORRIGIERT für Flexbox */
 .hero-benefits {
     margin-bottom: 2rem;
+    padding-left: 0;
+    /* Entferne Standard-UL-Padding */
+}
+
+.hero-benefits li {
+    margin-bottom: 0.5rem;
+    color: #444;
+    /* Flexbox für Icon + Text */
+    display: flex;
+    align-items: baseline;
+    /* Vertikale Ausrichtung */
+    justify-content: flex-start;
+    /* Standard: Linksbündig */
+    gap: 0.5em;
+    /* Abstand zwischen Icon und Text */
 }
 
 .hero-benefits li::before {
@@ -340,15 +376,40 @@ body.nav-open .mobile-nav-toggle .close-icon {
     color: #007bff;
     /* Blauer Haken */
     font-weight: bold;
-    /* Entferne absolute Positionierung */
-    /* position: absolute; */
-    /* left: 0; */
-    /* top: 0.1em; */
-    margin-right: 0.25rem;
-    /* Als Flex-Item braucht es keine explizite Positionierung mehr */
     flex-shrink: 0;
-    /* Verhindert, dass der Haken schrumpft */
+    /* Verhindert Schrumpfen */
+    /* Keine Positionierung mehr nötig */
 }
+
+/* Styling für textbasierten Trust Indikator - Checkliste #1.4 */
+.hero-trust-text {
+    margin-top: 1rem;
+    /* Abstand zum Button */
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.hero-trust-text span {
+    /* Falls mehrere Elemente drin sind */
+    margin-right: 1rem;
+    display: inline-block;
+    /* Sorgt für korrekten Abstand */
+}
+
+.hero-trust-text span:last-child {
+    margin-right: 0;
+}
+
+.hero-trust-text span svg {
+    /* Styling für eventuelle Icons wie Sterne */
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    margin-right: 0.2em;
+    fill: #ffc107;
+    /* Gold für Sterne */
+}
+
 
 .hero-image {
     max-width: 100%;
@@ -366,12 +427,10 @@ body.nav-open .mobile-nav-toggle .close-icon {
     align-items: center;
     gap: 1.5rem;
     flex-wrap: wrap;
-    /* Umbruch bei Bedarf */
 }
 
 .hero-trust-logos span {
     margin-right: 1rem;
-    /* Abstand zwischen Text und Logos */
     font-weight: bold;
     color: #555;
 }
@@ -384,44 +443,13 @@ body.nav-open .mobile-nav-toggle .close-icon {
     /* Optional: Logos etwas dezenter machen */
 }
 
-.hero-undertitle {
-    font-size: 1rem;
-    color: #555;
-    margin-top: -0.5rem;
-    /* Näher an Subtitle rücken */
-    margin-bottom: 1.5rem;
-    display: none;
-}
-
-.hero-trust-text {
-    margin-top: 1rem;
-    /* Abstand zum Button */
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.hero-trust-text span {
-    /* Falls mehrere Elemente drin sind */
-    margin-right: 1rem;
-    display: inline-block;
-    /* Sorgt für korrekten Abstand */
-}
-
-.hero-trust-text span svg {
-    /* Styling für eventuelle Icons wie Sterne */
-    width: 1em;
-    height: 1em;
-    vertical-align: -0.15em;
-    margin-right: 0.2em;
-    fill: #ffc107;
-    /* Gold für Sterne */
-}
-
+/* Optionales Video Styling - Checkliste #1.5 */
 .video-wrapper {
     margin-top: 2rem;
     /* Beispiel Abstand */
-    /* Weitere Stile hier */
+    /* Stile für das Video oder den Wrapper hier */
 }
+
 
 /* ==================================
       Problem Section
@@ -435,12 +463,6 @@ body.nav-open .mobile-nav-toggle .close-icon {
 
 .marker-underline {
     /* Für "Umsatz" etc. in h2 */
-    /* text-decoration: underline; */
-    /* Alternative: Border */
-    /* text-decoration-color: #007bff; */
-    /* text-decoration-thickness: 3px; */
-    /* text-underline-offset: 4px; */
-    /* Alternative mit Border: */
     border-bottom: 3px solid #007bff;
     padding-bottom: 2px;
     /* Kleiner Abstand zum Text */
@@ -466,12 +488,13 @@ body.nav-open .mobile-nav-toggle .close-icon {
 }
 
 /* ==================================
-      Features Grid (Problem & Benefits Sections)
+      Features Grid (Allgemein, z.B. für Benefits)
       ================================== */
+/* Diese Regel gilt, wenn KEIN #problem davorsteht */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    /* Responsive Grid */
+    /* Standard Responsive Grid */
     gap: 2rem;
 }
 
@@ -489,11 +512,15 @@ body.nav-open .mobile-nav-toggle .close-icon {
 .feature-item .icon {
     max-width: 50px;
     margin-bottom: 1rem;
+    flex-shrink: 0;
 }
 
 .feature-item h3 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
+    margin-top: 0;
+    /* Verhindert globalen H3 Margin */
+    flex-shrink: 0;
 }
 
 .feature-item p {
@@ -506,40 +533,29 @@ body.nav-open .mobile-nav-toggle .close-icon {
 /* Styling für Hervorhebung in Feature-Text (Beispiel) */
 .feature-item p em {
     display: block;
-    /* Eigene Zeile für den "Warum wichtig"-Teil */
     margin-top: 0.5rem;
     font-style: normal;
     font-size: 0.9em;
     color: #0056b3;
-    /* Dunkleres Blau */
 }
 
 /* ==================================
-   Features Grid (Problem & Benefits Sections) - ÜBERARBEITET für #problem
-   ================================== */
-
-/* ANPASSUNG: Spezifische Regeln für das Grid im Problem-Abschnitt */
+      Features Grid (Angepasst für #problem Section)
+      ================================== */
 #problem .features-grid {
     display: grid;
-    /* Standard (Desktop): 5 Spalten */
     grid-template-columns: repeat(5, 1fr);
+    /* Standard (Desktop): 5 Spalten */
     gap: 1.5rem;
     /* Ggf. Abstand leicht reduziert für 5 Spalten */
     align-items: stretch;
     /* Sorgt dafür, dass alle Boxen in einer Reihe gleich hoch sind */
 }
 
-/* ANPASSUNG: Regeln für die Items, um Höhe und Inhalt zu steuern */
 #problem .feature-item {
-    text-align: center;
+    /* Erbt Grundstile von .feature-item */
     padding: 2rem 1rem;
     /* Mehr vertikales Padding für mehr Höhe */
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; wird beibehalten */
     min-height: 280px;
     /* Beispiel: Mindesthöhe festlegen (Wert anpassen!) */
 }
@@ -547,27 +563,23 @@ body.nav-open .mobile-nav-toggle .close-icon {
 #problem .feature-item .icon {
     max-width: 45px;
     /* Ggf. Icons leicht verkleinern */
-    margin-bottom: 1rem;
-    flex-shrink: 0;
-    /* Verhindert Schrumpfen des Icons */
 }
 
 #problem .feature-item h3 {
     font-size: 1.1rem;
     /* Ggf. Schriftgröße anpassen */
     margin-bottom: 0.75rem;
-    flex-shrink: 0;
+    margin-top: 0;
+    /* Überschreibt globalen H3 Margin */
 }
 
 #problem .feature-item p {
-    color: #555;
     font-size: 0.9rem;
     /* Ggf. Schriftgröße anpassen */
-    flex-grow: 1;
-    /* Lässt den Text den verfügbaren Platz füllen */
     margin-bottom: 0;
     /* Kein Abstand am Ende des Absatzes */
 }
+
 
 /* ==================================
       Process Section
@@ -581,7 +593,7 @@ body.nav-open .mobile-nav-toggle .close-icon {
     /* Schritte oben ausrichten */
 }
 
-/* Nummerierung für Prozess-Schritte - Checkliste #4.1 */
+/* Nummerierung für Prozess-Schritte */
 .process-steps-column {
     counter-reset: process-step;
     /* Zähler initialisieren */
@@ -623,7 +635,7 @@ body.nav-open .mobile-nav-toggle .close-icon {
 .process-step-icon-wrapper {
     flex-shrink: 0;
     display: flex;
-    /* Geändert für Nummerierung */
+    /* Für Nummerierung */
     align-items: center;
 }
 
@@ -636,18 +648,18 @@ body.nav-open .mobile-nav-toggle .close-icon {
 .process-step-content h3 {
     font-size: 1.2rem;
     margin-bottom: 0.3rem;
+    margin-top: 0;
+    /* Verhindert globalen H3 Margin */
 }
 
 .process-step-content p {
     color: #555;
 }
 
-/* Styling für Hervorhebungen im Prozess - Checkliste #4.2 */
 .process-step-content p strong {
     color: #333;
-    /* Etwas dunkler für Hervorhebung */
+    /* Hervorhebung */
 }
-
 
 .process-side-image {
     border-radius: 8px;
@@ -657,11 +669,10 @@ body.nav-open .mobile-nav-toggle .close-icon {
 }
 
 /* ==================================
-      Case Study Section (Überarbeitet)
+      Case Study Section
       ================================== */
 #casestudy {
     background-color: #fff;
-    /* Sicherstellen, dass es nicht bg-light erbt */
 }
 
 #casestudy h2 {
@@ -687,6 +698,8 @@ body.nav-open .mobile-nav-toggle .close-icon {
 }
 
 .case-study-before h3 {
+    margin-top: 0;
+    /* Überschreibt globalen H3 Margin */
     margin-bottom: 1.5rem;
     color: #b71c1c;
     border-bottom: 2px solid #f5c6cb;
@@ -700,6 +713,8 @@ body.nav-open .mobile-nav-toggle .close-icon {
 }
 
 .case-study-after h3 {
+    margin-top: 0;
+    /* Überschreibt globalen H3 Margin */
     margin-bottom: 1.5rem;
     color: #155724;
     border-bottom: 2px solid #b1dfbb;
@@ -725,6 +740,7 @@ body.nav-open .mobile-nav-toggle .close-icon {
     position: absolute;
     left: 0;
     top: 0em;
+    /* Wie vom User bestätigt */
     font-family: 'Arial', sans-serif;
     font-weight: bold;
     font-size: 1.1em;
@@ -737,9 +753,11 @@ body.nav-open .mobile-nav-toggle .close-icon {
     color: #dc3545;
 }
 
-.case-study-after li::before {
+/* Haken für alle 'after' Items AUSSER .result */
+.case-study-after li:not(.result)::before {
     content: '✓';
     color: #28a745;
+    /* Erbt andere Stile von .case-study-grid li::before */
 }
 
 .case-study-after li.result {
@@ -751,12 +769,16 @@ body.nav-open .mobile-nav-toggle .close-icon {
     position: relative;
 }
 
+/* Rakete für .result Item */
 .case-study-after li.result::before {
     content: '🚀';
     color: initial;
-    left: 0.6em;
+    font-weight: normal;
     font-size: 1.3em;
+    left: 0.6em;
     top: 0.5em;
+    /* Wie vom User bereitgestellt - ggf. anpassen */
+    /* Erbt position:absolute etc. von .case-study-grid li::before */
 }
 
 .case-study-after li.result strong {
@@ -765,39 +787,30 @@ body.nav-open .mobile-nav-toggle .close-icon {
     display: block;
 }
 
-/* ==================================
-   Case Study Section - Ergänzungen
-   ================================== */
-
+/* Case Study Ergänzungen: Visualisierung & Studien */
 .case-study-visualization {
     margin-top: 3rem;
-    /* Abstand zur Grid */
     padding-top: 2rem;
-    /* Optional: Weiterer Abstand oder Linie */
     border-top: 1px solid #eee;
-    /* Optionale Trennlinie */
     text-align: center;
 }
 
 .case-study-visualization h3 {
+    margin-top: 0;
+    /* Override */
     margin-bottom: 1.5rem;
     font-size: 1.4rem;
     color: #333;
 }
 
 .case-study-viz-image {
-    /* Styling für das Bild */
     max-width: 100%;
     width: 600px;
-    /* Maximale Breite begrenzen */
     height: auto;
     margin: 0 auto 1rem auto;
-    /* Zentrieren mit Abstand unten */
     display: block;
     border-radius: 8px;
-    /* Optional */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    /* Optionaler Schatten */
 }
 
 .visualization-caption {
@@ -809,20 +822,18 @@ body.nav-open .mobile-nav-toggle .close-icon {
 
 .case-study-studies {
     margin-top: 3rem;
-    /* Abstand zur Visualisierung */
     padding: 2rem;
     background-color: #f8f9fa;
-    /* Leichter Hintergrund zur Abgrenzung */
     border: 1px solid #e9ecef;
-    /* Passender Rand */
     border-radius: 8px;
     max-width: 800px;
-    /* Begrenzte Breite für Lesbarkeit */
     margin-left: auto;
     margin-right: auto;
 }
 
 .case-study-studies h3 {
+    margin-top: 0;
+    /* Override */
     text-align: center;
     margin-bottom: 1.5rem;
     font-size: 1.4rem;
@@ -833,7 +844,6 @@ body.nav-open .mobile-nav-toggle .close-icon {
     margin-bottom: 1.5rem;
     padding-left: 1.5rem;
     border-left: 4px solid #007bff;
-    /* Blaue Akzentlinie */
     font-style: italic;
     color: #555;
 }
@@ -850,32 +860,22 @@ body.nav-open .mobile-nav-toggle .close-icon {
 }
 
 /* ==================================
-   CEO Video Placeholder Section
-   ================================== */
-
+      CEO Video Placeholder Section
+      ================================== */
 #ceo-video h2 {
-    /* Nutzt Standard h2 Styling, text-align ist im HTML gesetzt */
+    /* Nutzt Standard h2 Styling */
 }
 
 .video-placeholder-wrapper {
     max-width: 800px;
-    /* Maximale Breite des Videos */
     margin: 2rem auto 0 auto;
-    /* Zentriert mit Abstand nach oben */
     background-color: #e9ecef;
-    /* Heller grauer Hintergrund */
     border: 1px solid #dee2e6;
-    /* Dezenter Rand */
     border-radius: 8px;
-    /* Abgerundete Ecken */
     aspect-ratio: 16 / 9;
-    /* Sorgt für 16:9 Video-Format */
     position: relative;
-    /* Für absolute Positionierung des Inhalts */
     overflow: hidden;
-    /* Verhindert Überlaufen */
     cursor: pointer;
-    /* Zeigt an, dass es klickbar ist */
 }
 
 .video-placeholder-content {
@@ -886,28 +886,21 @@ body.nav-open .mobile-nav-toggle .close-icon {
     height: 100%;
     display: flex;
     flex-direction: column;
-    /* Icon und Text untereinander */
     justify-content: center;
     align-items: center;
     color: #495057;
-    /* Dunkelgraue Farbe für Text/Icon */
     transition: background-color 0.3s ease;
-    /* Sanfter Hover-Effekt */
 }
 
 .video-placeholder-wrapper:hover .video-placeholder-content {
     background-color: rgba(0, 0, 0, 0.1);
-    /* Leichter Overlay bei Hover */
 }
 
 .play-button-svg {
     width: 60px;
-    /* Größe des Play-Buttons */
     height: 60px;
     margin-bottom: 0.5rem;
-    /* Abstand zum Text */
     color: #007bff;
-    /* Blaue Farbe für Play-Button */
     opacity: 0.8;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
@@ -915,7 +908,6 @@ body.nav-open .mobile-nav-toggle .close-icon {
 .video-placeholder-wrapper:hover .play-button-svg {
     opacity: 1;
     transform: scale(1.1);
-    /* Leichte Vergrößerung bei Hover */
 }
 
 .video-placeholder-content span {
@@ -949,7 +941,6 @@ body.nav-open .mobile-nav-toggle .close-icon {
     text-align: left;
 }
 
-/* Highlight für Testimonial - Checkliste #6.1 */
 .testimonial-highlight {
     font-weight: bold;
     font-style: normal;
@@ -957,7 +948,6 @@ body.nav-open .mobile-nav-toggle .close-icon {
     margin-bottom: 0.5rem;
     color: #333;
 }
-
 
 .testimonial-content cite {
     font-style: normal;
@@ -1020,6 +1010,8 @@ body.nav-open .mobile-nav-toggle .close-icon {
 .pricing-card h3 {
     font-size: 1.6rem;
     margin-bottom: 0.5rem;
+    margin-top: 0;
+    /* Override */
 }
 
 .package-description {
@@ -1062,7 +1054,8 @@ body.nav-open .mobile-nav-toggle .close-icon {
     color: #28a745;
     position: absolute;
     left: 0;
-    top: 0;
+    top: 0.1em;
+    /* Ggf. anpassen */
     font-weight: bold;
 }
 
@@ -1076,30 +1069,17 @@ body.nav-open .mobile-nav-toggle .close-icon {
     color: #dc3545;
 }
 
-/* NEUE Regel: Überschreibt das Icon NUR für Bonus-Features */
+/* Icon für Bonus-Features */
 .features-list li.bonus-feature::before {
     content: '★';
-    /* Ändert den Inhalt zum Stern */
     color: #ffc107;
-    /* Setzt die Farbe auf Goldgelb */
-    /* Optional: Weitere Anpassungen für den Stern, falls nötig */
     /* top: 0.05em; */
-    /* Evtl. vertikale Position leicht anpassen */
-    /* font-size: 1.1em; */
-    /* Evtl. Größe leicht anpassen */
+    /* Ggf. anpassen */
 }
-
 
 .features-list li strong {
     font-weight: 700;
 }
-
-/* Styling für Bonus-Features - Checkliste #7.4 */
-.features-list li.bonus-feature strong {
-    /* Bereits fett, evtl. Farbe anpassen? */
-    /* color: #0056b3; */
-}
-
 
 .pricing-card .cta-button {
     margin-top: auto;
@@ -1224,13 +1204,11 @@ body.nav-open .mobile-nav-toggle .close-icon {
 }
 
 /* ==================================
-      Final CTA Section - Checkliste #8.1
+      Final CTA Section
       ================================== */
 #final-cta {
-    /* ID aus HTML verwenden */
     /* Erbt padding von .content-section */
     background-color: #0056b3;
-    /* Dunkleres Blau für Kontrast */
     color: #fff;
     text-align: center;
 }
@@ -1238,32 +1216,27 @@ body.nav-open .mobile-nav-toggle .close-icon {
 #final-cta h2 {
     color: #fff;
     margin-bottom: 1rem;
+    /* margin-top: 0; (implizit, da kein globaler Margin gesetzt) */
 }
 
 #final-cta .section-intro {
-    /* Überschreibt Standard .section-intro Farbe */
     color: #e0e0e0;
-    /* Hellerer Text auf dunklem Grund */
     margin-bottom: 2rem;
 }
 
 #final-cta .cta-button {
     background-color: #28a745;
-    /* Grüner Button für Kontrast */
     color: #fff;
 }
 
 #final-cta .cta-button:hover {
     background-color: #218838;
-    /* Dunkleres Grün */
 }
 
-/* Styling für optionalen letzten Trust-Boost - Checkliste #9.3 */
 .final-trust-boost {
     font-weight: bold;
     margin-bottom: 1.5rem;
     color: #ffc107;
-    /* Beispiel: Goldgelb */
     font-size: 1.1rem;
 }
 
@@ -1318,7 +1291,6 @@ body.nav-open .mobile-nav-toggle .close-icon {
     color: #fff;
 }
 
-/* Styling für zusätzliche Kontaktinfo - Checkliste #8.4 */
 .footer-contact {
     margin-top: 1rem;
     color: #aaa;
@@ -1332,11 +1304,359 @@ body.nav-open .mobile-nav-toggle .close-icon {
     color: #fff;
 }
 
-@media (max-width: 1140px) {
-    #problem .features-grid {
-        grid-template-columns: repeat(3, 1fr);
+/* ==================================
+      Kontaktseite Styles (Gruppiert)
+      ================================== */
+#contact-main h1 {
+    /* ID aus HTML für Kontakt-Section */
+    text-align: center;
+}
+
+.contact-details-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Standard: Untereinander */
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.contact-details-grid {
+    grid-template-columns: 1fr 1.5fr;
+    /* 2 Spalten: Links schmaler, rechts breiter */
+    align-items: start;
+    /* Oben ausrichten */
+}
+
+.contact-info h2,
+.contact-form-container h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    /* Kein margin-top hier, da global nicht gesetzt */
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info li {
+    margin-bottom: 1rem;
+}
+
+.contact-info li strong {
+    display: inline-block;
+    margin-bottom: 0.25rem;
+    color: #333;
+}
+
+.contact-info li a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-info li a:hover {
+    text-decoration: underline;
+}
+
+.contact-info li small {
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Kontaktformular Styling */
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    line-height: 1.5;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.contact-form .form-check {
+    display: flex;
+    align-items: start;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form .form-check input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.75rem;
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+}
+
+.contact-form .form-check label {
+    font-weight: normal;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    color: #555;
+}
+
+.contact-form .form-check label a {
+    color: #007bff;
+}
+
+.contact-form button[type="submit"] {
+    /* Nutzt .cta-button Stile */
+    padding: 0.8rem 2rem;
+}
+
+/* Styling für Formular-Nachrichten */
+.form-messages {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    display: none;
+    /* Standardmäßig ausgeblendet */
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.form-messages.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    display: block;
+}
+
+.form-messages.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    display: block;
+}
+
+#submit-button:disabled {
+    /* ID vom Button */
+    background-color: #6c757d;
+    border-color: #6c757d;
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+/* Optional: Karte */
+.map-container {
+    margin-top: 3rem;
+    /* Eigene Klasse für Map-Container */
+}
+
+.map-container iframe {
+    display: block;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    /* Optionaler Rand */
+}
+
+/* ==================================
+   Datenschutzseite Styles (Ergänzung)
+   ================================== */
+
+/* Fügt Abstand unter Listen (wie die der Rechte) hinzu */
+#datenschutz-main ul {
+    /* Passe ggf. den Selektor an deine HTML-Struktur an */
+    margin-bottom: 1.5rem;
+    /* Fügt Abstand unterhalb der Liste hinzu (Wert nach Bedarf anpassen) */
+
+    /* Stelle sicher, dass Listenpunkte und Einrückung korrekt sind,
+       falls sie global entfernt wurden */
+    list-style: disc;
+    /* Standard-Listenpunkte wieder aktivieren */
+    padding-left: 2rem;
+    /* Standard-Einrückung wieder hinzufügen (Wert anpassen) */
+    margin-left: 1rem;
+    /* Ggf. zusätzlichen linken Rand für die gesamte Liste */
+}
+
+/* Stelle sicher, dass Listenelemente (li) einen kleinen Abstand haben */
+#datenschutz-main li {
+    margin-bottom: 0.5rem;
+    /* Kleiner Abstand zwischen den Listenelementen */
+}
+
+/* In style.css */
+#datenschutz-main h2 {
+    /* Annahme: Section hat id="datenschutz-main" */
+    margin-top: 2.5rem;
+    /* Beispielwert */
+}
+
+#datenschutz-main h3 {
+    margin-top: 1.5rem;
+    /* Beispielwert */
+}
+
+/* Wichtig: Sicherstellen, dass diese Regeln nicht ungewollt H3s direkt unter H2 beeinflussen, ggf. spezifischer machen */
+#datenschutz-main p+h3,
+#datenschutz-main ul+h3 {
+    margin-top: 1.5rem;
+    /* Nur wenn ein Absatz oder Liste davor ist */
+}
+
+/* ==================================
+   Cookie Consent Banner Styles
+   ================================== */
+.cookie-banner {
+    position: fixed;
+    /* Bleibt beim Scrollen sichtbar */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #343a40;
+    /* Dunkler Hintergrund */
+    color: #f8f9fa;
+    /* Heller Text */
+    padding: 1.5rem 0;
+    z-index: 1050;
+    /* Über anderen Elementen, aber unter ggf. Modals */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    /* Standardmäßig ausgeblendet, JS blendet ein */
+    opacity: 0;
+    /* Für Fade-In Effekt */
+    transform: translateY(100%);
+    /* Startet unterhalb des Viewports */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Klasse zum Einblenden */
+.cookie-banner.show {
+    display: block;
+    /* Oder flex, wenn .container flex sein soll */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cookie-banner-content {
+    display: flex;
+    flex-wrap: wrap;
+    /* Umbruch auf kleinen Schirmen */
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    /* Abstand zwischen Text und Buttons */
+}
+
+.cookie-banner-text {
+    flex-grow: 1;
+    /* Nimmt verfügbaren Platz ein */
+    margin: 0;
+    /* Entfernt Standard-Absatz-Margin */
+    font-size: 0.9rem;
+    line-height: 1.5;
+    max-width: 70%;
+    /* Verhindert, dass Text zu breit wird */
+}
+
+.cookie-banner-text a {
+    color: #9ec5fe;
+    /* Hellere Linkfarbe */
+    text-decoration: underline;
+}
+
+.cookie-banner-text a:hover {
+    color: #fff;
+}
+
+.cookie-banner-actions {
+    display: flex;
+    gap: 0.75rem;
+    /* Abstand zwischen Buttons */
+    flex-shrink: 0;
+    /* Verhindert Schrumpfen der Button-Gruppe */
+}
+
+/* Optional: Styling für sekundären Button (Ablehnen) */
+.cta-button-secondary {
+    display: inline-block;
+    background-color: #6c757d;
+    /* Grau */
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    /* Kleineres Padding */
+    border-radius: 5px;
+    font-weight: 700;
+    text-align: center;
+    border: 1px solid #6c757d;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    font-size: 0.9rem;
+    /* Kleinere Schrift */
+}
+
+.cta-button-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Optional: Styling für Link-Button (Einstellungen) */
+.cta-button-link {
+    background: none;
+    border: none;
+    color: #adb5bd;
+    text-decoration: underline;
+    padding: 0.6rem 0;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.cta-button-link:hover {
+    color: #fff;
+}
+
+/* Responsivität für Banner */
+@media (max-width: 768px) {
+    .cookie-banner-content {
+        flex-direction: column;
+        /* Untereinander auf Mobile */
+        align-items: stretch;
+        /* Volle Breite für Elemente */
+        text-align: center;
+    }
+
+    .cookie-banner-text {
+        max-width: 100%;
+        margin-bottom: 1rem;
+        /* Abstand zum Button-Bereich */
+    }
+
+    .cookie-banner-actions {
+        justify-content: center;
+        /* Buttons zentrieren */
     }
 }
+
 
 /* ==================================
       Responsivität (Media Queries)
@@ -1345,47 +1665,42 @@ body.nav-open .mobile-nav-toggle .close-icon {
 /* --- 992px Breakpoint (Tablets) --- */
 @media (max-width: 992px) {
 
-    /* Hero Section: Text über Bild */
+    /* Hero Section */
     .hero-grid {
         grid-template-columns: 1fr;
         text-align: center;
     }
 
-    .hero-benefits li {
-        justify-content: center;
-        /* Zentriert den Inhalt (Haken + Text) innerhalb des LI */
-    }
-
     .hero-content-left {
-        /* order entfernt */
         margin-bottom: 3rem;
+        /* War schon angepasst */
     }
 
     .hero-visual-right {
-        /* order entfernt */
         margin-bottom: 0;
+        /* War schon angepasst */
     }
 
     .hero-image {
         margin: 0 auto;
     }
 
+    .hero-benefits li {
+        justify-content: center;
+        /* KORREKTUR ANGEWENDET */
+    }
+
     .hero-trust-text {
         text-align: center;
-        /* Zentriert den Text auf Tablets/Mobile */
         margin-bottom: 1.5rem;
-        /* Abstand zu den Logos */
     }
 
     .hero-trust-logos {
         margin-top: 1rem;
-        /* Weniger Abstand, da Text davor ist */
         justify-content: center;
-        /* Sicherstellen, dass Logos zentriert sind */
     }
 
-
-    /* Process Section: Bild ausblenden */
+    /* Process Section */
     .process-layout-grid {
         grid-template-columns: 1fr;
     }
@@ -1394,11 +1709,17 @@ body.nav-open .mobile-nav-toggle .close-icon {
         display: none;
     }
 
-    /* Case Study: Karten untereinander */
+    /* Case Study */
     .case-study-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+
+    /* Problem Section Grid Anpassung (3 Spalten) */
+    #problem .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
 }
 
 /* Ende @media (max-width: 992px) */
@@ -1407,7 +1728,7 @@ body.nav-open .mobile-nav-toggle .close-icon {
 /* --- 768px Breakpoint (Mobile) --- */
 @media (max-width: 768px) {
 
-    /* Allgemeine Schriftgrößen anpassen */
+    /* Allgemeine Schriftgrößen */
     h1 {
         font-size: 2rem;
     }
@@ -1453,17 +1774,6 @@ body.nav-open .mobile-nav-toggle .close-icon {
         border-bottom: none;
     }
 
-    .hero-trust-text span {
-        display: block;
-        /* Untereinander auf Mobile? */
-        margin-right: 0;
-        margin-bottom: 0.5rem;
-    }
-
-    .hero-trust-text span:last-child {
-        margin-bottom: 0;
-    }
-
     .mobile-nav-toggle {
         display: block;
     }
@@ -1472,42 +1782,41 @@ body.nav-open .mobile-nav-toggle .close-icon {
         display: none;
     }
 
-    /* Mobilen CTA im geöffneten Menü anzeigen */
     body.nav-open .mobile-nav-cta-item {
+        /* Korrekt hier platziert */
         display: block;
     }
 
-    /* Sektions-Padding reduzieren */
-    .content-section {
-        padding: 3rem 0;
+    /* Hero Section */
+    .hero-trust-text span {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 0.5rem;
     }
 
-    .new-hero-section {
-        padding: 2rem 0;
-    }
-
-    .hero-grid {
-        gap: 2rem;
+    .hero-trust-text span:last-child {
+        margin-bottom: 0;
     }
 
     .hero-headline {
         font-size: 2.2rem;
     }
 
-    #problem .features-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        /* Ggf. Abstand weiter reduzieren */
+    .new-hero-section {
+        padding: 3rem 0;
     }
 
-    #problem .feature-item {
-        min-height: auto;
-        /* Mindesthöhe auf Mobile aufheben oder reduzieren */
-        padding: 1.5rem 1rem;
+    /* Padding reduziert */
+
+
+    /* Sektions-Padding reduzieren */
+    .content-section {
+        padding: 3rem 0;
     }
 
-    /* Grids auf eine Spalte */
-    .features-grid {
+    /* Grids auf eine Spalte (Allgemein) */
+    .features-grid:not(#problem .features-grid) {
+        /* Stellt sicher, dass Problem-Grid nicht überschrieben wird */
         grid-template-columns: 1fr;
     }
 
@@ -1515,7 +1824,18 @@ body.nav-open .mobile-nav-toggle .close-icon {
         grid-template-columns: 1fr;
     }
 
-    /* Case Study Anpassungen für Mobile */
+    /* Problem Section Grid Anpassung (2 Spalten) */
+    #problem .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    #problem .feature-item {
+        min-height: auto;
+        padding: 1.5rem 1rem;
+    }
+
+    /* Case Study Anpassungen */
     .case-study-before,
     .case-study-after {
         padding: 1.5rem;
@@ -1524,6 +1844,21 @@ body.nav-open .mobile-nav-toggle .close-icon {
     .case-study-before h3,
     .case-study-after h3 {
         font-size: 1.3rem;
+        /* Passt an globale mobile h3 an */
+    }
+
+    .case-study-studies {
+        padding: 1.5rem;
+    }
+
+    .case-study-visualization h3,
+    .case-study-studies h3 {
+        font-size: 1.3rem;
+        /* Passt an globale mobile h3 an */
+    }
+
+    .case-study-viz-image {
+        width: 100%;
     }
 
     .case-study-grid li {
@@ -1537,26 +1872,12 @@ body.nav-open .mobile-nav-toggle .close-icon {
 
     .case-study-after li.result::before {
         left: 0.6em;
+        /* top: 0.5em; bleibt wie es ist */
     }
 
-    .case-study-studies {
-        padding: 1.5rem;
-    }
-
-    .case-study-visualization h3,
-    .case-study-studies h3 {
-        font-size: 1.3rem;
-        /* An mobile h3 anpassen */
-    }
-
-    .case-study-viz-image {
-        width: 100%;
-        /* Volle Breite auf Mobile */
-    }
-
+    /* CEO Video */
     .video-placeholder-wrapper {
         max-width: 100%;
-        /* Volle Breite auf Mobile */
     }
 
     .play-button-svg {
@@ -1564,7 +1885,10 @@ body.nav-open .mobile-nav-toggle .close-icon {
         height: 50px;
     }
 
-    /* FAQ Anpassungen für Mobile */
+
+
+
+    /* FAQ Anpassungen */
     .faq-question {
         padding: 0.8rem 1rem;
     }
@@ -1578,10 +1902,6 @@ body.nav-open .mobile-nav-toggle .close-icon {
     }
 
     /* Footer Layout */
-    .footer-section .container {
-        /* Bleibt column */
-    }
-
     .footer-nav {
         display: flex;
         flex-direction: column;
@@ -1599,9 +1919,15 @@ body.nav-open .mobile-nav-toggle .close-icon {
 
 /* Ende @media (max-width: 768px) */
 
-/* Anpassung für kleine Handys (z.B. unter 480px) -> 1 Spalte */
+
+/* --- 480px Breakpoint (Kleines Mobile) --- */
 @media (max-width: 480px) {
+
+    /* Problem Section Grid Anpassung (1 Spalte) */
     #problem .features-grid {
-        grid-template-columns: 1fr; /* Nur noch eine Spalte */
+        grid-template-columns: 1fr;
+        /* Nur noch eine Spalte */
     }
 }
+
+/* Ende @media (max-width: 480px) */
