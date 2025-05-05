@@ -366,7 +366,7 @@ body.nav-open .mobile-nav-toggle .close-icon {
     margin-bottom: 0.5rem;
     color: #444;
     /* Flexbox für Icon + Text */
-    display: flex;
+    display: inline-block;
     align-items: baseline;
     /* Vertikale Ausrichtung */
     justify-content: flex-start;
@@ -380,6 +380,7 @@ body.nav-open .mobile-nav-toggle .close-icon {
     color: #007bff;
     /* Blauer Haken */
     font-weight: bold;
+    margin-right: 0.5em;
     flex-shrink: 0;
     /* Verhindert Schrumpfen */
     /* Keine Positionierung mehr nötig */
