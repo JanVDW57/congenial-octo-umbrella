@@ -7,24 +7,17 @@
     <title>SalesFast: Schneller & einfacher verkaufen!</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Cal element-click embed code begins -->
+
     <script type="text/javascript">
         (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
         Cal("init", "30min", { origin: "https://cal.com" });
-
-
-        // Important: Please add the following attributes to the element that should trigger the calendar to open upon clicking.
-        // `data-cal-link="jan-van-de-weyer-jhbszh/30min"`
-        // data-cal-namespace="30min"
-        // `data-cal-config='{"layout":"month_view","theme":"auto"}'`
-
         Cal.ns["30min"]("ui", { "cssVarsPerTheme": { "light": { "cal-brand": "#007bff" }, "dark": { "cal-brand": "#007bff" } }, "hideEventTypeDetails": false, "layout": "month_view" });
     </script>
-    <!-- Cal element-click embed code ends -->
 </head>
 
 <body>
@@ -33,10 +26,8 @@
         <div class="container header-container">
 
             <div class="logo-container">
-                <a href="#">
-                    <img src="logo_menu.png" class="logo-img" alt="SalesFast Logo">
+                <a href="index.html"> <img src="images/logo_menu.png" class="logo-img" alt="SalesFast Logo">
                 </a>
-                <a href="#" class="logo-link" aria-label="Zur Startseite"></a>
             </div>
 
             <nav class="main-nav" id="main-navigation">
@@ -47,15 +38,20 @@
                     <li><a href="#offer" class="nav-link">Pakete</a></li>
                     <li><a href="#faq" class="nav-link">FAQ</a></li>
                     <li class="mobile-nav-cta-item">
-                        <a href="#offer" class="cta-button mobile-nav-cta">Kostenloses Erstgespräch</a>
+                        <a href="#" class="cta-button mobile-nav-cta"
+                            data-cal-link="jan-van-de-weyer-jhbszh/30min?utm_source=salesfast_website&utm_medium=cta_button&utm_campaign=erstgespraech&utm_content=mobile_menu_cta"
+                            data-cal-namespace="30min" data-cal-config='{"layout":"month_view"}'>Kostenloses
+                            Erstgespräch</a>
                     </li>
                 </ul>
             </nav>
 
             <div class="header-right-container">
-                <a class="cta-button header-cta-button" data-cal-link="jan-van-de-weyer-jhbszh/30min"
+                <a class="cta-button header-cta-button"
+                    data-cal-link="jan-van-de-weyer-jhbszh/30min?utm_source=salesfast_website&utm_medium=cta_button&utm_campaign=erstgespraech&utm_content=header_cta"
                     data-cal-namespace="30min" data-cal-config='{"layout":"month_view"}'>
-                    Kostenloses Erstgespräch</a>
+                    Kostenloses Erstgespräch
+                </a>
 
                 <button class="mobile-nav-toggle" aria-label="Menü umschalten" aria-expanded="false"
                     aria-controls="main-navigation">
@@ -64,7 +60,7 @@
                         <span class="line line-2"></span>
                         <span class="line line-3"></span>
                     </span>
-                    <span class="close-icon" aria-hidden="true">&times;</span>
+                    <span class="close-icon" aria-hidden="true">×</span>
                 </button>
             </div>
 
@@ -85,47 +81,38 @@
                             Optimieren Sie Ihren Verkaufsprozess in nur <span class="highlight-bg">7 Tagen</span> – mit
                             einem <span class="highlight-bg">praxiserprobten</span> System.
                         </p>
-                        <p class="hero-undertitle">Von über 50 Unternehmen erfolgreich eingesetzt.</p>
+                        <p class="hero-undertitle"></p>
                         <p class="hero-subline">
                             Für Unternehmer, die ihren Vertrieb skalieren möchten –<br> ohne Chaos, Stress oder
                             komplizierte Tools.
                         </p>
 
                         <ul class="hero-benefits">
-                            <li> <span class="hero-benefit-text">Weniger Stress im Vertrieb durch automatisierte
-                                    Abläufe</span> </li>
-                            <li>
-                                <span class="hero-benefit-text">Mehr Struktur: Prozesse, die sich anpassen &
-                                    skalieren</span>
-                            </li>
-                            <li>
-                                <span class="hero-benefit-text">In 7 Tagen startklar – ohne technisches Vorwissen</span>
+                            <li><span class="hero-benefit-text">Weniger Stress im Vertrieb durch automatisierte
+                                    Abläufe</span></li>
+                            <li><span class="hero-benefit-text">Mehr Struktur: Prozesse, die sich anpassen &
+                                    skalieren</span></li>
+                            <li><span class="hero-benefit-text">In 7 Tagen startklar – ohne technisches Vorwissen</span>
                             </li>
                         </ul>
 
-                        <a class="cta-button hero-cta cta-prominent" data-cal-link="jan-van-de-weyer-jhbszh/30min"
+                        <a class="cta-button hero-cta cta-prominent"
+                            data-cal-link="jan-van-de-weyer-jhbszh/30min?utm_source=salesfast_website&utm_medium=cta_button&utm_campaign=erstgespraech&utm_content=hero_cta"
                             data-cal-namespace="30min" data-cal-config='{"layout":"month_view"}'>
                             Kostenloses Erstgespräch buchen
                         </a>
 
                         <div class="hero-trust-text">
-                            <span style="color: gold;">★★★★★</span>Bewertung vom ersten Projekt
+                            <span class="stars">★★★★★</span> Bewertung vom ersten Projekt
                         </div>
 
                     </div>
                     <div class="hero-visual-right">
-                        <img src="image_abovethefold.png" alt="SalesFast Prozess Visualisierung" class="hero-image"
-                            loading="lazy">
+                        <img src="images/image_abovethefold.png" alt="SalesFast Prozess Visualisierung"
+                            class="hero-image" loading="lazy">
                     </div>
 
                 </div>
-                <!--<div class="hero-trust-logos"> <span>Bekannt aus / Vertrauen uns:</span>
-                    <img src="gdrive_logo.svg" alt="Kundenlogo 1">
-                    <img src="aws_logo.svg" alt="Kundenlogo 2">
-                    <img src="meet_logo.svg" alt="Kundenlogo 3">
-                    <img src="g_logo.svg" alt="Kundenlogo 3">
-                </div>-->
-
             </div>
         </section>
         <section id="problem" class="content-section">
@@ -137,27 +124,28 @@
 
                 <div class="features-grid">
                     <div class="feature-item">
-                        <img src="icon_chaoskommunikation.png" alt="Icon Kommunikation" class="icon" loading="lazy">
+                        <img src="images/icon_chaoskommunikation.png" alt="Icon Kommunikation" class="icon"
+                            loading="lazy">
                         <h3>Chaos in der Kommunikation</h3>
                         <p>E-Mails, Zettel, WhatsApp – nichts ist dokumentiert. Leads gehen unter.</p>
                     </div>
                     <div class="feature-item">
-                        <img src="icon_zeitfresser.png" alt="Icon Zeitfresser" class="icon" loading="lazy">
+                        <img src="images/icon_zeitfresser.png" alt="Icon Zeitfresser" class="icon" loading="lazy">
                         <h3>Zeitfresser im Alltag</h3>
                         <p>Statt Verkaufsgespräche zu führen, tragen Sie Daten manuell hin und her.</p>
                     </div>
                     <div class="feature-item">
-                        <img src="icon_alteprozesse.png" alt="Icon Veraltet" class="icon" loading="lazy">
+                        <img src="images/icon_alteprozesse.png" alt="Icon Veraltet" class="icon" loading="lazy">
                         <h3>Veraltete Prozesse</h3>
                         <p>Sie nutzen Tools, die vor 10 Jahren modern waren – und heute alles aufhalten.</p>
                     </div>
                     <div class="feature-item">
-                        <img src="icon_followup.png" alt="Icon Nachverfolgung" class="icon" loading="lazy">
+                        <img src="images/icon_followup.png" alt="Icon Nachverfolgung" class="icon" loading="lazy">
                         <h3>Keine Nachverfolgung</h3>
                         <p>Interessenten verschwinden im Nirgendwo. Follow-up? Fehlanzeige.</p>
                     </div>
                     <div class="feature-item">
-                        <img src="icon_aufgabenverteilung.png" alt="Icon Unklarheit" class="icon" loading="lazy">
+                        <img src="images/icon_aufgabenverteilung.png" alt="Icon Unklarheit" class="icon" loading="lazy">
                         <h3>Keine Klarheit im Team</h3>
                         <p>Wer macht was bis wann? Unklarheit führt zu Fehlern – und Stress.</p>
                     </div>
@@ -177,7 +165,7 @@
                     implementieren ein maßgeschneidertes System, das auf bewährten Tools wie CRM und
                     Automatisierungsplattformen basiert. Das Ergebnis: Mehr Klarheit, weniger Aufwand, mehr Erfolg.
                 </p>
-                <img src="system_visualisierung.png" alt="SalesFast System Visualisierung"
+                <img src="images/system_visualisierung.png" alt="SalesFast System Visualisierung"
                     class="placeholder-image content-image" loading="lazy">
             </div>
         </section>
@@ -187,33 +175,33 @@
 
                 <div class="features-grid">
                     <div class="feature-item">
-                        <img src="icon_zeitersparnis.png" alt="Icon Zeitersparnis" class="icon" loading="lazy">
+                        <img src="images/icon_zeitersparnis.png" alt="Icon Zeitersparnis" class="icon" loading="lazy">
                         <h3>Zeitersparnis</h3>
                         <p>Sparen Sie typ. <strong>8-12 Stunden/Woche</strong> durch Automatisierung. <br><em>Mehr Zeit
                                 für Ihr Kerngeschäft!</em></p>
                     </div>
                     <div class="feature-item">
-                        <img src="icon_mehrumsatz.png" alt="Icon Umsatz" class="icon" loading="lazy">
+                        <img src="images/icon_mehrumsatz.png" alt="Icon Umsatz" class="icon" loading="lazy">
                         <h3>Mehr Umsatz</h3>
                         <p>Steigern Sie Ihre Abschlussquote durch optimierte Prozesse und konsequentes Follow-Up.</p>
                     </div>
                     <div class="feature-item">
-                        <img src="icon_skalierbarkeit.png" alt="Icon Skalierbarkeit" class="icon" loading="lazy">
+                        <img src="images/icon_skalierbarkeit.png" alt="Icon Skalierbarkeit" class="icon" loading="lazy">
                         <h3>Skalierbarkeit</h3>
                         <p>Ein sauberes System ermöglicht nachhaltiges Wachstum ohne Chaos.</p>
                     </div>
                     <div class="feature-item">
-                        <img src="icon_kundenbeziehung.png" alt="Icon Kunden" class="icon" loading="lazy">
+                        <img src="images/icon_kundenbeziehung.png" alt="Icon Kunden" class="icon" loading="lazy">
                         <h3>Bessere Kundenbeziehungen</h3>
                         <p>Schnellere Reaktionszeiten und professionelle Betreuung steigern die Zufriedenheit.</p>
                     </div>
                     <div class="feature-item">
-                        <img src="icon_reputation.png" alt="Icon Reputation" class="icon" loading="lazy">
+                        <img src="images/icon_reputation.png" alt="Icon Reputation" class="icon" loading="lazy">
                         <h3>Stärkere Reputation</h3>
                         <p>Sammeln Sie mehr positive Bewertungen durch begeisterte Kunden.</p>
                     </div>
                     <div class="feature-item">
-                        <img src="icon_modern.png" alt="Icon Modern" class="icon" loading="lazy">
+                        <img src="images/icon_modern.png" alt="Icon Modern" class="icon" loading="lazy">
                         <h3>Modern & Ortsunabhängig</h3>
                         <p>Arbeiten Sie digital, flexibel und von überall.</p>
                     </div>
@@ -229,12 +217,11 @@
                 </p>
 
                 <div class="process-layout-grid">
-
                     <div class="process-steps-column">
                         <div class="process-step-item">
                             <div class="process-step-icon-wrapper">
-                                <span class="process-step-number"></span> <img src="icon_analyse.png" alt="Icon Analyse"
-                                    class="process-icon">
+                                <span class="process-step-number"></span> <img src="images/icon_analyse.png"
+                                    alt="Icon Analyse" class="process-icon">
                             </div>
                             <div class="process-step-content">
                                 <h3>Analyse Ihres aktuellen Prozesses</h3>
@@ -245,7 +232,7 @@
                         <div class="process-step-item">
                             <div class="process-step-icon-wrapper">
                                 <span class="process-step-number"></span>
-                                <img src="icon_einrichtungcrm.png" alt="Icon Einrichtung" class="process-icon">
+                                <img src="images/icon_einrichtungcrm.png" alt="Icon Einrichtung" class="process-icon">
                             </div>
                             <div class="process-step-content">
                                 <h3>Einrichtung & Konfiguration des CRM-Systems</h3>
@@ -256,19 +243,20 @@
                         <div class="process-step-item">
                             <div class="process-step-icon-wrapper">
                                 <span class="process-step-number"></span>
-                                <img src="icon_automatisierung.png" alt="Icon Automatisierung" class="process-icon">
+                                <img src="images/icon_automatisierung.png" alt="Icon Automatisierung"
+                                    class="process-icon">
                             </div>
                             <div class="process-step-content">
                                 <h3>Implementierung von Automatisierungen</h3>
                                 <p><strong>Wir nutzen Tools wie Zapier oder Make.com</strong>, um wiederkehrende
-                                    Aufgaben (z.B.
-                                    Follow-Ups, Dateneingabe) zu automatisieren und Ihnen Zeit zu sparen.</p>
+                                    Aufgaben (z.B. Follow-Ups, Dateneingabe) zu automatisieren und Ihnen Zeit zu sparen.
+                                </p>
                             </div>
                         </div>
                         <div class="process-step-item">
                             <div class="process-step-icon-wrapper">
                                 <span class="process-step-number"></span>
-                                <img src="icon_schulung.png" alt="Icon Schulung" class="process-icon">
+                                <img src="images/icon_schulung.png" alt="Icon Schulung" class="process-icon">
                             </div>
                             <div class="process-step-content">
                                 <h3>Schulung & Übergabe</h3>
@@ -279,7 +267,7 @@
                         <div class="process-step-item">
                             <div class="process-step-icon-wrapper">
                                 <span class="process-step-number"></span>
-                                <img src="icon_optimierung.png" alt="Icon Optimierung" class="process-icon">
+                                <img src="images/icon_optimierung.png" alt="Icon Optimierung" class="process-icon">
                             </div>
                             <div class="process-step-content">
                                 <h3>Kontinuierliche Optimierung (optional)</h3>
@@ -287,12 +275,56 @@
                                     Anpassungen zur Verbesserung vor.</p>
                             </div>
                         </div>
+                        <div class="process-cta-container">
+                            <a class="cta-button"
+                                data-cal-link="jan-van-de-weyer-jhbszh/30min?utm_source=salesfast_website&utm_medium=cta_button&utm_campaign=erstgespraech&utm_content=process_cta"
+                                data-cal-namespace="30min" data-cal-config='{"layout":"month_view"}'>
+                                Jetzt Erstgespräch vereinbaren
+                            </a>
+                        </div>
                     </div>
                     <div class="process-image-column">
-                        <img src="image_placeholder_process.png" alt="Team bei der Prozessoptimierung"
+                        <img src="images/image_placeholder_process.webp" alt="Team bei der Prozessoptimierung"
                             class="process-side-image" loading="lazy">
                     </div>
+                </div>
+            </div>
+        </section>
+        <section id="about-me" class="content-section bg-light">
+            <div class="container">
+                <div class="about-me-grid">
+                    <div class="about-me-image-col">
+                        <img src="images/about_me_foto.jpg" alt="Jan van de Weyer - SalesFast Experte"
+                            class="about-me-photo" loading="lazy">
+                    </div>
 
+                    <div class="about-me-text-col">
+                        <h3>Wer steckt hinter SalesFast?</h3>
+                        <h4>Jan van de Weyer, Gründer & Vertriebsoptimierer</h4>
+                        <p>
+                            <strong>Meine Mission: Klarheit im Vertrieb schaffen</strong><br>
+                            Ich bin Jan und habe SalesFast aus der Praxis heraus entwickelt: Im Unternehmen meines
+                            Vaters gab es keinen echten Vertriebsprozess – nur Zettel auf dem Schreibtisch. Also habe
+                            ich über 12 Monate ein System aufgebaut, das Klarheit, Effizienz und ortsunabhängiges
+                            Arbeiten ermöglicht.
+                        </p>
+                        <p>
+                            <strong>Erfahrung aus dem echten Unternehmeralltag</strong><br>
+                            Zuvor war ich fünf Jahre im Betrieb aktiv, habe ihn digitalisiert und mit skaliert. Mein
+                            Know-how stammt nicht aus Lehrbüchern, sondern direkt vom Schreibtisch, aus der Werkstatt
+                            und aus dem Kundenkontakt – 100 % praxisbasiert.
+                        </p>
+                        <p>
+                            <strong>Was mich antreibt – und was Kunden davon haben</strong><br>
+                            Mein Aha-Moment kam, als ich merkte, wie einfach und flexibel Vertrieb wird, wenn Prozesse
+                            und Datenstrukturen sauber stehen – für mich und für Mitarbeitende. Genau das möchte ich
+                            weitergeben: individuelle Systeme, die wirklich zum Unternehmen passen.
+                        </p>
+                        <p>
+                            <strong>Nächster Schritt: Ihr Vertrieb, neu gedacht</strong><br>
+                            Lassen Sie uns gemeinsam herausfinden, wie auch Ihr Vertrieb aufs nächste Level kommt.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -300,7 +332,6 @@
             <div class="container">
                 <h2>Erfolg in der Praxis: Metallmanufaktur van de Weyer</h2>
                 <div class="case-study-grid">
-
                     <div class="case-study-before">
                         <h3>Vorher (Metallverarbeiter, NRW)</h3>
                         <ul>
@@ -312,7 +343,6 @@
                             <li>Implementierung von KI unmöglich</li>
                         </ul>
                     </div>
-
                     <div class="case-study-after">
                         <h3>Nachher mit SalesFast</h3>
                         <ul>
@@ -329,11 +359,12 @@
                 </div>
                 <div class="case-study-visualization">
                     <h3>Der Effekt: Kosten runter, Umsatz rauf!</h3>
-                    <img src="image_kostenumsatz.png" alt="Grafik: Kostensenkung und Umsatzsteigerung durch SalesFast"
-                        class="case-study-viz-image">
+                    <img src="images/image_kostenumsatz.png"
+                        alt="Grafik: Kostensenkung und Umsatzsteigerung durch SalesFast" class="case-study-viz-image">
                     <p class="visualization-caption">Klare Vertriebsstrukturen steigern den Umsatz und senken die
                         Kosten.</p>
                 </div>
+
                 <div class="case-study-studies">
                     <h3>Wissenschaftlich belegt: Struktur und Follow Up zahlt sich aus</h3>
                     <blockquote>
@@ -342,14 +373,7 @@
                         <footer>– Quelle: <a href="https://hbr.org/2004/11/crm-done-right" target="_blank"
                                 rel="noopener noreferrer">Harvard Business Review</a>
                         </footer>
-
                     </blockquote>
-                    <!--<blockquote>
-                        <p>"Nur 2 % der Verkäufe werden bereits beim ersten Kontakt abgeschlossen – folglich finden 98 %
-                            der Abschlüsse erst durch Nachfassen statt​."</p>
-                        <footer>– Quelle: <a href="https://www.fundera.com/resources/sales-statistics" target="_blank"
-                                rel="noopener noreferrer">Sales Statistics – Fundera</a></footer>
-                    </blockquote>-->
                     <blockquote>
                         <p>"80 % der Deals werden erst nach mindestens fünf Follow-up-Kontakten
                             erfolgreich zum Abschluss gebracht​."</p>
@@ -359,83 +383,44 @@
                 </div>
             </div>
         </section>
-        <section id="ceo-video" class="content-section bg-light">
-            <div class="container">
-                <h2 style="text-align: center;">Eine Nachricht von einem unserer Kunden</h2>
-                <p class="section-intro">
-                    Erfahren Sie direkt von Thomas, wie salesfast sein Unternehmen verbessert hat und wie die
-                    Zusammenarbeit verlief.
-                </p>
-
-                <div class="video-placeholder-wrapper">
-                    <div class="video-placeholder-content">
-                        <iframe width="100%" height="100%"
-                            src="https://www.youtube.com/embed/BsIXkbxrawo?si=IOe7HpfSnK11umfg"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        <!-- <section id="testimonial" class="content-section bg-light">
-            <div class="container">
-                <h2>Was unsere Kunden sagen</h2>
-                <div class="testimonial-content"> <img
-                        src="https://via.placeholder.com/100x100/CCCCCC/FFFFFF?text=Kunde" alt="Foto von Max Mustermann"
-                        class="testimonial-image" loading="lazy">
-                    <blockquote>
-                        <p class="testimonial-highlight">"...endlich Struktur im Vertrieb – klare Empfehlung!"</p>
-                        <p>"Seit wir SalesFast nutzen, haben wir endlich Struktur im Vertrieb. Die Zeitersparnis ist
-                            enorm und wir verlieren keine Anfragen mehr. Die Zusammenarbeit war super unkompliziert und
-                            das System läuft perfekt – klare Empfehlung!"</p>
-                    </blockquote>
-                    <cite>
-                        <strong>Max Mustermann</strong><br>
-                        Geschäftsführer, Beispiel GmbH
-                    </cite>
-                </div>
-            </div>
-        </section> -->
         <section id="offer" class="content-section offer-section">
             <div class="container">
                 <h2>Wählen Sie das passende SalesFast Paket für Sie</h2>
                 <p class="section-intro">
                     Wir bieten flexible Optionen, um Ihren Sales-Prozess optimal zu unterstützen.
                 </p>
-
                 <div class="simple-pricing-grid">
-
                     <div class="pricing-card basis">
                         <h3>Basis</h3>
                         <p class="package-description">Der ideale Einstieg für Selbstständige & kleine Teams.</p>
-
+                        <div class="price"><strong>1.900 €</strong> <span class="vat-notice">(zzgl. MwSt.)</span></div>
                         <ul class="features-list">
+                            <li>Vertriebsanalyse</li>
                             <li>Umfassender Videokurs</li>
                             <li>Praxiserprobte Vorlagen</li>
-                            <li>Prozessanalyse</li>
                             <li class="unavailable">Wöchentliche Live-Q&A-Calls</li>
                             <li>4 Wochen persönliche Betreuung</li>
                             <li class="unavailable">Erweiterte Systemanalyse</li>
+                            <li class="unavailable">Gemeinsame Abschlusskontrolle</li>
                             <li class="unavailable">Bonus Mastermind Call</li>
                         </ul>
-                        <a class="cta-button"
-                            data-cal-link="jan-van-de-weyer-jhbszh/30min?utm_source=salesfast_website&utm_medium=cta_button&utm_campaign=erstgespraech&utm_content=faq_section"
+                        <a href="#" class="cta-button"
+                            data-cal-link="jan-van-de-weyer-jhbszh/30min?utm_source=salesfast_website&utm_medium=cta_button&utm_campaign=erstgespraech&utm_content=offer_basis_cta"
                             data-cal-namespace="30min" data-cal-config='{"layout":"month_view"}'>Gespräch für Basis
                             buchen</a>
                     </div>
-
                     <div class="pricing-card standard highlighted">
                         <span class="badge">Beliebtestes Paket</span>
                         <h3>Standard</h3>
                         <p class="package-description">Die Komplettlösung für ambitionierte Unternehmen.</p>
+                        <div class="price"><strong>3.900 €</strong> <span class="vat-notice">(zzgl. MwSt.)</span>
+                            <p><small>(statt 5.900 €)</small></p>
+                        </div>
                         <ul class="features-list">
+                            <li>Vertriebsanalyse</li>
                             <li>Umfassender Videokurs</li>
                             <li>Praxiserprobte Vorlagen</li>
-                            <li>Prozessanalyse</li>
-                            <li>Wöchentliche Live-Q&A-Calls (Mi & Fr)</li>
+                            <li>Wöchentliche Live-Q&A-Calls</li>
                             <li>6 Wochen persönliche Betreuung</li>
                             <li>Erweiterte Systemanalyse (1 Std.)</li>
                             <li>Gemeinsame Abschlusskontrolle (1-2 Std.)</li>
@@ -444,35 +429,32 @@
                         <div class="guarantee">
                             <p><strong>Garantie:</strong> Umsatzsteigerung in 6 Wochen oder 6 weitere Wochen gratis!</p>
                         </div>
-                        <a class="cta-button large-cta"
-                            data-cal-link="jan-van-de-weyer-jhbszh/30min?utm_source=salesfast_website&utm_medium=cta_button&utm_campaign=erstgespraech&utm_content=faq_section"
+                        <a href="#" class="cta-button large-cta"
+                            data-cal-link="jan-van-de-weyer-jhbszh/30min?utm_source=salesfast_website&utm_medium=cta_button&utm_campaign=erstgespraech&utm_content=offer_standard_cta"
                             data-cal-namespace="30min" data-cal-config='{"layout":"month_view"}'>Gespräch für Standard
                             buchen</a>
-                        <p class="availability-notice">Freie Plätze limitiert!</p>
                     </div>
-
                     <div class="pricing-card erweitert">
                         <h3>Erweitert (Premium)</h3>
                         <p class="package-description">Maximale Unterstützung für schnelles Wachstum & komplexe Setups.
                         </p>
-
+                        <div class="price"><strong>5.900 €</strong> <span class="vat-notice">(zzgl. MwSt.)</span></div>
                         <ul class="features-list">
+                            <li>Vertriebsanalyse</li>
                             <li>Umfassender Videokurs</li>
                             <li>Praxiserprobte Vorlagen</li>
-                            <li>Prozessanalyse</li>
-                            <li>Wöchentliche Live-Q&A-Calls (Mi & Fr)</li>
+                            <li>Wöchentliche Live-Q&A-Calls</li>
                             <li><strong>12 Wochen</strong> persönliche Betreuung</li>
-                            <li><strong>Zwei</strong> gemeinsame Systemanalysen</li>
+                            <li>Erweiterte Systemanalyse (1 Std.)</li>
                             <li>Gemeinsame Abschlusskontrolle (1-2 Std.)</li>
                             <li class="bonus-feature"><strong>Bonus:</strong> 1x wöchentl. 1-zu-1 Mastermind Call</li>
-                            <li class="bonus-feature">Zusätzliches Modul: <strong>AI Voice-Agents</strong></li>
+                            <li class="bonus-feature">Zusätzliches Modul: <strong>Automatisierte Angebote</strong></li>
                         </ul>
-                        <a class="cta-button"
-                            data-cal-link="jan-van-de-weyer-jhbszh/30min?utm_source=salesfast_website&utm_medium=cta_button&utm_campaign=erstgespraech&utm_content=faq_section"
+                        <a href="#" class="cta-button"
+                            data-cal-link="jan-van-de-weyer-jhbszh/30min?utm_source=salesfast_website&utm_medium=cta_button&utm_campaign=erstgespraech&utm_content=offer_erweitert_cta"
                             data-cal-namespace="30min" data-cal-config='{"layout":"month_view"}'>Gespräch für Erweitert
                             buchen</a>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -482,12 +464,9 @@
                 <p class="section-intro">
                     Hier finden Sie Antworten auf die wichtigsten Fragen zu SalesFast und unserem Prozess.
                 </p>
-
                 <div class="faq-container">
                     <details class="faq-item">
-                        <summary class="faq-question">
-                            Für wen ist SalesFast geeignet?
-                            <span class="faq-icon"></span>
+                        <summary class="faq-question">Für wen ist SalesFast geeignet?<span class="faq-icon"></span>
                         </summary>
                         <div class="faq-answer">
                             <p>SalesFast ist ideal für Selbstständige, kleine und mittlere Unternehmen (KMU) sowie
@@ -497,54 +476,45 @@
                         </div>
                     </details>
                     <details class="faq-item">
-                        <summary class="faq-question">
-                            Was kostet die Einrichtung?
-                            <span class="faq-icon"></span>
+                        <summary class="faq-question">Was kostet die Einrichtung?<span class="faq-icon"></span>
                         </summary>
                         <div class="faq-answer">
-                            <p>
-                                Die Kosten für die einmalige Einrichtung Ihres SalesFast Systems sind abhängig vom
+                            <p>Die Kosten für die einmalige Einrichtung Ihres SalesFast Systems sind abhängig vom
                                 gewählten Leistungspaket und der Komplexität Ihrer individuellen Anforderungen.
                                 Genaueres dazu und ein passendes Angebot besprechen wir gerne unverbindlich im
                                 persönlichen Erstgespräch.</p> <br>
-                            <a id="faq-cal-button" class="cta-button small-cta"
-                                data-cal-link="jan-van-de-weyer-jhbszh/30min?utm_source=salesfast_website&utm_medium=cta_button&utm_campaign=erstgespraech&utm_content=faq_section"
+                            <a href="#" id="faq-cal-button" class="cta-button small-cta"
+                                data-cal-link="jan-van-de-weyer-jhbszh/30min?utm_source=salesfast_website&utm_medium=cta_button&utm_campaign=erstgespraech&utm_content=faq_cta"
                                 data-cal-namespace="30min" data-cal-config='{"layout":"month_view"}'>
-                                Unverbindliches Erstgespräch buchen </a>
+                                Unverbindliches Erstgespräch buchen
+                            </a>
                         </div>
                     </details>
                     <details class="faq-item">
-                        <summary class="faq-question">
-                            Wie hoch sind die laufenden Kosten?
-                            <span class="faq-icon"></span>
+                        <summary class="faq-question">Wie hoch sind die laufenden Kosten?<span class="faq-icon"></span>
                         </summary>
                         <div class="faq-answer">
-                            <p>
-                                Für Einzelunternehmer oder kleine Teams belaufen sich die monatlichen Kosten für die
-                                notwendigen Tools in der Regel auf etwa <strong>100 € pro Monat.</strong><br><br>
+                            <p>Für Einzelunternehmer oder kleine Teams belaufen sich die monatlichen Kosten für die
+                                notwendigen Tools in der Regel auf etwa 100 € pro Monat.
+
                                 Höhere Kosten fallen nur dann an, wenn Ihr Unternehmen wächst – also zum Beispiel mehr
                                 Benutzer für das CRM benötigt werden – oder wenn die Automatisierungen in sehr hohem
                                 Umfang genutzt werden.</p>
                         </div>
                     </details>
                     <details class="faq-item">
-                        <summary class="faq-question">
-                            Welche Tools werden hauptsächlich verwendet?
-                            <span class="faq-icon"></span>
-                        </summary>
+                        <summary class="faq-question">Welche Tools werden hauptsächlich verwendet?<span
+                                class="faq-icon"></span></summary>
                         <div class="faq-answer">
                             <p>Wir setzen auf bewährte und flexible Tools. Kernbestandteil ist oft ein CRM-System wie
                                 z.B. Close.com, Pipedrive oder HubSpot (je nach Bedarf). Für die Automatisierung nutzen
-                                wir häufig Make.com oder Zapier, um das CRM mit anderen Tools
-                                (Kalender, E-Mail, etc.) zu verbinden.</p>
+                                wir häufig Make.com oder Zapier, um das CRM mit anderen Tools (Kalender, E-Mail, etc.)
+                                zu verbinden.</p>
                         </div>
                     </details>
-
                     <details class="faq-item">
-                        <summary class="faq-question">
-                            Wie lange dauert die Implementierung?
-                            <span class="faq-icon"></span>
-                        </summary>
+                        <summary class="faq-question">Wie lange dauert die Implementierung?<span
+                                class="faq-icon"></span></summary>
                         <div class="faq-answer">
                             <p>Unser Ziel ist es, dass Ihr Grundsystem innerhalb von 7 Tagen einsatzbereit ist. Die
                                 Dauer für komplexere Anpassungen und die vollständige Einarbeitung hängt vom gewählten
@@ -552,54 +522,45 @@
                                 intensiv über 6 Wochen.</p>
                         </div>
                     </details>
-
                     <details class="faq-item">
-                        <summary class="faq-question">
-                            Brauche ich technisches Vorwissen?
-                            <span class="faq-icon"></span>
+                        <summary class="faq-question">Brauche ich technisches Vorwissen?<span class="faq-icon"></span>
                         </summary>
                         <div class="faq-answer">
                             <p>Nein. Sie erhalten Schritt-für-Schritt neue Videos und Dokumente, die Ihnen bei der
                                 Einrichtung und der Anwendung helfen.</p>
                         </div>
                     </details>
-
                     <details class="faq-item">
-                        <summary class="faq-question">
-                            Was passiert nach der Implementierung?
-                            <span class="faq-icon"></span>
-                        </summary>
+                        <summary class="faq-question">Was passiert nach der Implementierung?<span
+                                class="faq-icon"></span></summary>
                         <div class="faq-answer">
                             <p>Nach der Übergabe können Sie das System selbstständig nutzen. Je nach Wunsch bieten wir
                                 weitere Betreuung an (z.B. KPIs analysieren, fortlaufende Optimierung, 1-zu-1 Calls).
-                                Ziel
-                                ist, dass Sie langfristig erfolgreich mit dem System arbeiten und mehr Geld in weniger
-                                Zeit verdienen.</p>
+                                Ziel ist, dass Sie langfristig erfolgreich mit dem System arbeiten und mehr Geld in
+                                weniger Zeit verdienen.</p>
                         </div>
                     </details>
-
                 </div>
             </div>
         </section>
         <section id="final-cta" class="content-section cta-section">
             <div class="container">
-                <!--<p class="final-trust-boost">Bereits über 50 Unternehmen vertrauen auf SalesFast!</p>-->
                 <h2>Bereit für den nächsten Schritt?</h2>
                 <p class="section-intro">
                     Vereinbaren Sie jetzt Ihr kostenloses Erstgespräch und starten Sie durch zu mehr Struktur und Umsatz
                     im Vertrieb.
                 </p>
-                <a id="footer-cal-button" class="cta-button large-cta"
-                    data-cal-link="jan-van-de-weyer-jhbszh/30min?utm_source=salesfast_website&utm_medium=cta_button&utm_campaign=erstgespraech&utm_content=faq_section"
+                <a href="#" id="final-cta-cal-button" class="cta-button large-cta"
+                    data-cal-link="jan-van-de-weyer-jhbszh/30min?utm_source=salesfast_website&utm_medium=cta_button&utm_campaign=erstgespraech&utm_content=final_cta"
                     data-cal-namespace="30min" data-cal-config='{"layout":"month_view"}'>
-                    Kostenloses Erstgespräch buchen</a>
+                    Kostenloses Erstgespräch buchen (ca. 15 Min.)
+                </a>
             </div>
         </section>
-
     </main>
     <footer class="footer-section">
         <div class="container">
-            <p>&copy; <span id="current-year"></span> SalesFast. Alle Rechte vorbehalten.</p>
+            <p>© <span id="current-year"></span> SalesFast. Alle Rechte vorbehalten.</p>
             <nav class="footer-nav">
                 <a href="kontakt.html">Kontakt</a> |
                 <a href="impressum.html">Impressum</a> |
@@ -614,8 +575,8 @@
             <p class="cookie-banner-text">
                 Wir verwenden Cookies, um Ihr Website-Erlebnis zu verbessern und die Nutzung zu analysieren. Für weitere
                 Informationen lesen Sie bitte unsere <a href="datenschutz.html"
-                    target="_blank">Datenschutzerklärung</a>. Stimmen Sie der Verwendung von Analyse- und
-                Marketing-Cookies zu?
+                    target="_blank">Datenschutzerklärung</a>.
+                Stimmen Sie der Verwendung von Analyse- und Marketing-Cookies zu?
             </p>
             <div class="cookie-banner-actions">
                 <button id="cookie-accept-btn" class="cta-button small-cta">Alle Akzeptieren</button>

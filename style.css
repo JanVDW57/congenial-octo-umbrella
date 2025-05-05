@@ -351,6 +351,10 @@ body.nav-open .mobile-nav-toggle .close-icon {
     color: #666;
 }
 
+.hero-trust-text .stars {
+    color: gold;
+}
+
 /* Hero Benefits - KORRIGIERT für Flexbox */
 .hero-benefits {
     margin-bottom: 2rem;
@@ -666,6 +670,103 @@ body.nav-open .mobile-nav-toggle .close-icon {
     margin-top: 1rem;
     /* Etwas Abstand nach oben */
     width: 100%;
+}
+
+/* ==================================
+   Process Section Styles - Ergänzung
+   ================================== */
+
+   .process-cta-container {
+    margin-top: 3rem; /* Abstand zum letzten Prozess-Schritt (Wert anpassen) */
+    text-align: center; /* Zentriert den Button (wenn er inline-block ist) */
+}
+
+/* Ggf. spezifisches Styling für den Button hier, falls er anders aussehen soll */
+/* .process-cta-container .cta-button { ... } */
+
+/* ==================================
+   About Me Section Styles
+   ================================== */
+#about-me {
+    /* Nutzt .content-section Padding und ggf. .bg-light Hintergrund */
+}
+
+/* Optional: Globale Überschrift für den Abschnitt */
+/* #about-me > .container > h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+} */
+
+.about-me-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Standard: Untereinander (Mobile First) */
+    gap: 3rem;
+    /* Abstand zwischen Bild und Text */
+    align-items: center;
+    /* Vertikal zentrieren */
+}
+
+/* Zweispaltiges Layout für größere Bildschirme */
+@media (min-width: 768px) {
+
+    /* Oder min-width: 992px, je nach Präferenz */
+    .about-me-grid {
+        /* Beispiel: Bild links (schmaler), Text rechts (breiter) */
+        grid-template-columns: 1fr 2fr;
+        /* Oder umgekehrt: grid-template-columns: 2fr 1fr; */
+        gap: 4rem;
+        /* Ggf. mehr Abstand */
+    }
+
+    /* Optional: Reihenfolge auf Desktop ändern, falls Bild rechts sein soll */
+    /* .about-me-image-col { order: 2; } */
+    /* .about-me-text-col { order: 1; } */
+}
+
+.about-me-photo {
+    width: 100%;
+    max-width: 350px;
+    /* Maximale Breite für das Bild */
+    height: auto;
+    border-radius: 8px;
+    /* Abgerundete Ecken */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    /* Leichter Schatten */
+    display: block;
+    margin: 0 auto;
+    /* Zentriert das Bild, wenn Spalte breiter ist */
+}
+
+.about-me-text-col h3 {
+    margin-top: 0;
+    /* Kein extra Abstand zur Oberkante der Spalte */
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    /* Etwas größer als Standard H3 */
+    color: #0056b3;
+    /* Dunkleres Blau oder Hauptfarbe */
+}
+
+.about-me-text-col h4 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: #555;
+}
+
+.about-me-text-col p {
+    margin-bottom: 1rem;
+    color: #444;
+    /* Etwas dunklerer Text */
+    line-height: 1.7;
+    /* Gute Lesbarkeit */
+}
+
+.about-me-text-col p strong {
+    color: #333;
+    /* Hervorhebung */
 }
 
 /* ==================================
@@ -1023,6 +1124,7 @@ body.nav-open .mobile-nav-toggle .close-icon {
 
 .price {
     margin-bottom: 1.5rem;
+    display: none
 }
 
 .price strong {
@@ -1789,7 +1891,7 @@ body.nav-open .mobile-nav-toggle .close-icon {
 
     /* Hero Section */
     .hero-trust-text span {
-        display: block;
+        display: flex-block;
         margin-right: 0;
         margin-bottom: 0.5rem;
     }
