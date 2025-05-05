@@ -1422,13 +1422,6 @@ body.nav-open .mobile-nav-toggle .close-icon {
     margin-top: 2rem;
 }
 
-.contact-details-grid {
-    grid-template-columns: 1fr 1.5fr;
-    /* 2 Spalten: Links schmaler, rechts breiter */
-    align-items: start;
-    /* Oben ausrichten */
-}
-
 .contact-info h2,
 .contact-form-container h2 {
     margin-bottom: 1rem;
@@ -1820,6 +1813,13 @@ body.nav-open .mobile-nav-toggle .close-icon {
     /* Problem Section Grid Anpassung (3 Spalten) */
     #problem .features-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .contact-details-grid {
+        grid-template-columns: 1fr 1.5fr;
+        /* 2 Spalten: Links schmaler, rechts breiter */
+        align-items: start;
+        /* Oben ausrichten */
     }
 
 }
